@@ -1,0 +1,72 @@
+/* ============================================
+   Paleta de Cores — Pedro Trovo Portfolio
+   Extraída do banner @bannerPedroTrovo.svg
+   ============================================ */
+
+:root {
+
+  /* --- Backgrounds --- */
+  --color-bg-primary:    #060608; /* Deep Void   — fundo principal da página   */
+  --color-bg-card:       #080810; /* Card Dark   — cards e seções              */
+  --color-bg-subtle:     #0d0d15; /* Subtle Navy — elementos sobrepostos       */
+
+  /* --- Borders & Dividers --- */
+  --color-border:        #151520; /* Border Mist — bordas, linhas divisórias   */
+
+  /* --- Text --- */
+  --color-text-primary:  #ffffff; /* Pure White  — títulos e texto principal   */
+  --color-text-muted:    #555566; /* Slate Gray  — subtítulos, metadados       */
+
+  /* --- Accent --- */
+  --color-accent:        #00d4ff; /* Cyan Accent — links, CTAs, destaques      */
+  --color-accent-dim:    #00d4ff26; /* Cyan 15%  — fundos de badges, hovers    */
+
+}
+
+:root.light {
+
+  --color-bg-primary:    #f5f5f7;
+  --color-bg-card:       #ffffff;
+  --color-bg-subtle:     #e8e8ed;
+  --color-border:        #d4d4d8;
+  --color-text-primary:  #1a1a2e;
+  --color-text-muted:    #6b7280;
+  --color-accent:        #0099cc;
+  --color-accent-dim:    #00a3cc1a;
+
+}
+
+/* ============================================
+   Tokens de uso rápido
+   ============================================ */
+
+/* Backgrounds */
+.bg-primary  { background-color: var(--color-bg-primary); }
+.bg-card     { background-color: var(--color-bg-card); }
+.bg-subtle   { background-color: var(--color-bg-subtle); }
+
+/* Borders */
+.border-default { border: 1px solid var(--color-border); }
+
+/* Text */
+.text-primary { color: var(--color-text-primary); }
+.text-muted   { color: var(--color-text-muted); }
+.text-accent  { color: var(--color-accent); }
+
+/* Accent fills */
+.bg-accent     { background-color: var(--color-accent); color: #003a4a; }
+.bg-accent-dim { background-color: var(--color-accent-dim); }
+
+/* ============================================
+   Referência rápida
+   ============================================
+
+   #060608  Deep Void   → background da página
+   #080810  Card Dark   → cards, modais, sections
+   #0d0d15  Subtle Navy → overlays, elementos flutuantes
+   #151520  Border Mist → bordas, hr, divisores
+   #555566  Slate Gray  → texto secundário, labels, placeholders
+   #ffffff  Pure White  → headings, texto de destaque
+   #00d4ff  Cyan Accent → links, hover, CTAs, tags de tech
+
+   ============================================ */

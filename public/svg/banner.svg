@@ -1,0 +1,24 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="400" fill="#060608"/>
+
+  <!-- Logo -->
+  <rect x="60" y="120" width="160" height="160" rx="36" fill="#080810" stroke="#151520" stroke-width="2"/>
+  <text x="140" y="209" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="52" letter-spacing="-0.5">
+    <tspan fill="#00d4ff">&lt;</tspan><tspan fill="#ffffff">P</tspan><tspan fill="#00d4ff"> /&gt;</tspan>
+  </text>
+
+  <!-- Nome -->
+  <text x="260" y="175" font-family="Inter, sans-serif" font-weight="700" font-size="42" fill="#ffffff" letter-spacing="-0.5">Pedro Trovo</text>
+
+  <!-- Subtítulo -->
+  <text x="260" y="212" font-family="Inter, sans-serif" font-weight="300" font-size="18" fill="#555566" letter-spacing="0.5">BACKEND DEVELOPER</text>
+
+  <!-- Linha divisória -->
+  <line x1="260" y1="235" x2="440" y2="235" stroke="#151520" stroke-width="1"/>
+
+  <!-- Portfolio -->
+  <text x="260" y="268" font-family="JetBrains Mono, monospace" font-weight="500" font-size="16" fill="#00d4ff" letter-spacing="4">PORTFOLIO</text>
+
+  <!-- Traço decorativo direita -->
+  <line x1="1140" y1="200" x2="600" y2="200" stroke="#0d0d15" stroke-width="1"/>
+</svg>

@@ -1,0 +1,82 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente do Vidro (Subtle Navy -> Card Dark) -->
+    <linearGradient id="glassGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0d15"/>
+      <stop offset="100%" stop-color="#080810"/>
+    </linearGradient>
+
+    <!-- Brilho de Azul Celeste Neon -->
+    <linearGradient id="glareGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00c0ff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#00c0ff" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Filtro Neon forte para o P -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- REMOVIDO: O fundo retangular preto (#060608) foi retirado -->
+
+  <!-- Grupo Centralizado -->
+  <g transform="translate(60, 60)">
+    
+    <!-- Losango Principal (Corpo do Vidro) -->
+    <!-- Este retângulo escuro agora atua como o fundo da letra -->
+    <rect x="-40" y="-40" width="80" height="80" rx="4" 
+          transform="rotate(45)" 
+          fill="url(#glassGradient)" 
+          stroke="#151520" 
+          stroke-width="1"/>
+
+    <!-- Reflexo de Vidro (Top Left) -->
+    <path d="M-28 -28 L0 -56 L28 -28 L0 0 Z" 
+          fill="url(#glareGradient)" 
+          transform="rotate(45)"/>
+
+    <!-- Losango Interno (Borda Brilhante) -->
+    <rect x="-30" y="-30" width="60" height="60" rx="2" 
+          transform="rotate(45)" 
+          fill="none" 
+          stroke="#00c0ff" 
+          stroke-width="1.5" 
+          stroke-opacity="0.9"
+          filter="url(#neonGlow)"/>
+
+    <!-- A Letra P - Efeito Neon -->
+    
+    <!-- Camada de Fundo (O Brilho Atrás da letra) -->
+    <text x="0" y="12" 
+          text-anchor="middle" 
+          font-family="Inter, system-ui, sans-serif" 
+          font-weight="700" 
+          font-size="42" 
+          fill="#00c0ff" 
+          filter="url(#neonGlow)"
+          letter-spacing="-1">
+      P
+    </text>
+
+    <!-- Camada da Frente (Letra Branca Nítida) -->
+    <text x="0" y="12" 
+          text-anchor="middle" 
+          font-family="Inter, system-ui, sans-serif" 
+          font-weight="700" 
+          font-size="42" 
+          fill="#ffffff" 
+          letter-spacing="-1">
+      P
+    </text>
+
+    <!-- Ponto de Acento -->
+    <circle cx="22" cy="-22" r="2.5" fill="#00c0ff" filter="url(#neonGlow)"/>
+    
+  </g>
+</svg>

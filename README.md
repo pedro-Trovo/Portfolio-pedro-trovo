@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="public/svg/logo_portfolio_official.svg" width="180" alt="Pedro Trovo">
+  <img src="public/svg/Pedro_Trovo_Portfolio_logo.svg" width="180" alt="Pedro Trovo">
 </h1>
 
 <p align="center">

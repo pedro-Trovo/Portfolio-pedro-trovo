@@ -10,7 +10,7 @@ function Home() {
       <div className="home-hero">
         <div className="home-photo-col">
           <div className="home-photo">
-            <span className="home-photo-placeholder">PT</span>
+            <img src="/profile/161767490.png" alt="Pedro Trovo" className="home-photo-img" />
           </div>
           <div className="home-photo-buttons">
             <a href="/cv.pdf" download className="btn btn-primary">

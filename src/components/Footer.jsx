@@ -26,7 +26,7 @@ function Footer() {
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </div>
-      <p className="footer-copy">&copy; 2026</p>
+      <p className="footer-copy">Pedro Trovo &copy; 2026</p>
     </footer>
   )
 }

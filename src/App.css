@@ -132,11 +132,11 @@ main {
   transition: background 0.3s, border-color 0.3s;
 }
 
-.home-photo-placeholder {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  letter-spacing: 2px;
+.home-photo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .home-photo-buttons {
@@ -247,7 +247,7 @@ main {
 .btn-secondary {
   background-color: transparent;
   color: var(--color-text-primary);
-  border-color: var(--color-border);
+  border-color: var(--color-text-muted);
 }
 
 .btn-secondary:hover {
@@ -258,13 +258,14 @@ main {
 .btn-icon {
   padding: 0.65rem 0.85rem;
   background-color: transparent;
-  color: var(--color-accent);
-  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  border-color: var(--color-text-muted);
 }
 
 .btn-icon:hover {
   border-color: var(--color-accent);
   background-color: var(--color-accent-dim);
+  color: var(--color-accent);
 }
 
 /* ============================================

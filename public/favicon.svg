@@ -1,0 +1,16 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="4" y="4" width="112" height="112" rx="24" fill="#080810" stroke="#00d4ff" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="60" y="73" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="36" letter-spacing="-0.5">
+    <tspan fill="#00d4ff">&lt;</tspan><tspan fill="#ffffff">P</tspan><tspan fill="#00d4ff"> /&gt;</tspan>
+  </text>
+</svg>

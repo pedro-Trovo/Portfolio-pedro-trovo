@@ -1,6 +1,0 @@
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="4" width="112" height="112" rx="24" fill="#080810" stroke="#151520" stroke-width="1.5"/>
-  <text x="60" y="73" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="36" letter-spacing="-0.5">
-    <tspan fill="#00d4ff">&lt;</tspan><tspan fill="#ffffff">P</tspan><tspan fill="#00d4ff"> /&gt;</tspan>
-  </text>
-</svg>

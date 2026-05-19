@@ -14,7 +14,7 @@ function Home() {
           </div>
           <div className="home-photo-buttons">
             <a href="/cv.pdf" download className="btn btn-primary">
-              <FontAwesomeIcon icon={faDownload} /> Baixar Curriculum Vitae
+              <FontAwesomeIcon icon={faDownload} /> Curriculum Vitae
             </a>
             <a
               href="/cv.pdf"

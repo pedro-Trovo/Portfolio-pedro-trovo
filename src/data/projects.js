@@ -47,4 +47,46 @@ export const projects = [
     },
     context: 'Projeto de Iniciação Científica — FATEC Ipiranga (2025-2026)',
   },
+  {
+    slug: 'translog',
+    title: 'TransLog',
+    subtitle: 'Sistema de Gerenciamento de Entregas',
+    description:
+      'Sistema para gerenciamento e rastreamento de entregas com backend SOAP e frontend moderno em React.',
+    image: '/images/projects/translog/1-inicio.png',
+    images: [
+      '/images/projects/translog/1-inicio.png',
+      '/images/projects/translog/2-filtros por status.png',
+      '/images/projects/translog/3-detalhes de um registro-aoclicaremumregistro.png',
+      '/images/projects/translog/4-filtrar-por-data.png',
+      '/images/projects/translog/5-formularioparacriarentrega.png',
+      '/images/projects/translog/6-filtroporcodigo.png',
+      '/images/projects/translog/7-atualizacaodepedidooucancelamento_forms.png',
+    ],
+    tags: ['Java', 'Spring Boot', 'SOAP', 'React', 'PostgreSQL', 'TailwindCSS', 'Docker'],
+    techStack: [
+      { category: 'Frontend', items: ['React', 'Vite', 'TailwindCSS', 'shadcn/ui', 'ECharts'] },
+      { category: 'Backend', items: ['Java 17', 'Spring Boot 3.2', 'SOAP Web Services', 'JPA'] },
+      { category: 'Banco', items: ['PostgreSQL'] },
+      { category: 'DevOps', items: ['Docker', 'Maven'] },
+    ],
+    features: [
+      'Criação de entregas com dados de remetente, destinatário, endereço e peso',
+      'Rastreamento por código de rastreio com timeline completa do histórico de status',
+      'Atualização de status com transições válidas (Coletado → Em Trânsito → Saiu para Entrega → Entregue / Tentativa Falha)',
+      'Cancelamento de entregas com registro de motivo e validação de regras de negócio',
+      'Filtros por período, status e busca por código de rastreio',
+      'Dashboard com gráfico de barras da distribuição de status utilizando ECharts',
+      'Geração automática de código de rastreio no formato TL-YYYYMMDD-NNNN',
+    ],
+    about:
+      'O TransLog é um sistema completo de gerenciamento de entregas desenvolvido como projeto full-stack, combinando um backend SOAP robusto em Java com um frontend moderno em React. O sistema oferece desde o cadastro de entregas até o rastreamento detalhado com timeline de status, seguindo um fluxo de transições pré-definido que garante a integridade do processo logístico. A arquitetura orientada a serviços SOAP proporciona contratos bem definidos para integração com outros sistemas.',
+    architecture:
+      'O backend utiliza Spring Boot 3.2 com Web Services SOAP (JAX-WS) para expor operações de criação, rastreamento, atualização de status e cancelamento de entregas. O banco PostgreSQL armazena as entregas e seu histórico de status. O frontend em React com TailwindCSS e shadcn/ui consome o backend via requisições SOAP/XML convertidas pelo Axios. O gráfico de status é renderizado com ECharts. A aplicação é dockerizada com suporte a Docker Compose para ambiente completo.',
+    limitations: [],
+    links: {
+      github: 'https://github.com/pedro-Trovo/translog',
+    },
+    context: 'Projeto Full-Stack — Desenvolvimento próprio',
+  },
 ]

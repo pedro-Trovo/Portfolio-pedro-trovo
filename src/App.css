@@ -740,7 +740,8 @@ main {
 }
 
 .experience-toggle {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.4rem;
   background: none;

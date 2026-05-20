@@ -52,7 +52,7 @@ export const projects = [
     title: 'TransLog',
     subtitle: 'Sistema de Gerenciamento de Entregas',
     description:
-      'Painel interno (intranet) moderno conectado a sistema legado via SOAP. Projeto de integração entre REST e SOAP para gestão de entregas.',
+      'Painel interno (intranet) moderno conectado a sistema legado via SOAP. O Express atua como API REST intermediária entre o frontend React e o backend SOAP legado.',
     image: '/images/projects/translog/1-inicio.png',
     images: [
       '/images/projects/translog/1-inicio.png',
@@ -63,9 +63,10 @@ export const projects = [
       '/images/projects/translog/6-filtroporcodigo.png',
       '/images/projects/translog/7-atualizacaodepedidooucancelamento_forms.png',
     ],
-    tags: ['Java', 'Spring Boot', 'SOAP', 'React', 'PostgreSQL', 'REST', 'Docker'],
+    tags: ['Java', 'Spring Boot', 'SOAP', 'React', 'Express', 'PostgreSQL', 'REST', 'Docker'],
     techStack: [
       { category: 'Frontend', items: ['React', 'Vite', 'TailwindCSS', 'shadcn/ui', 'ECharts'] },
+      { category: 'API REST', items: ['Express', 'Node.js'] },
       { category: 'Backend', items: ['Java 17', 'Spring Boot 3.2', 'SOAP Web Services', 'JPA'] },
       { category: 'Banco', items: ['PostgreSQL'] },
       { category: 'DevOps', items: ['Docker', 'Maven'] },
@@ -80,9 +81,9 @@ export const projects = [
       'Geração automática de código de rastreio no formato TL-YYYYMMDD-NNNN',
     ],
     about:
-      'O TransLog é um painel interno (intranet) moderno conectado a um sistema legado via SOAP. Trata-se de um projeto de integração entre REST e SOAP, onde o frontend moderno consome serviços SOAP expostos por um sistema legado de gestão de entregas. O sistema oferece desde o cadastro de entregas até o rastreamento detalhado com timeline de status, seguindo um fluxo de transições pré-definido que garante a integridade do processo logístico.',
+      'O TransLog é um painel interno (intranet) moderno conectado a um sistema legado via SOAP. Trata-se de um projeto de integração entre REST e SOAP, onde uma API REST intermediária em Express faz a ponte entre o frontend React e o backend SOAP legado de gestão de entregas. O sistema oferece desde o cadastro de entregas até o rastreamento detalhado com timeline de status, seguindo um fluxo de transições pré-definido que garante a integridade do processo logístico.',
     architecture:
-      'O TransLog funciona como uma ponte entre um frontend moderno (REST) e um sistema legado exposto via Web Services SOAP. O backend Spring Boot 3.2 expõe operações SOAP (criação, rastreamento, atualização e cancelamento de entregas) seguindo contratos XSD. O banco PostgreSQL armazena os dados. O frontend em React com TailwindCSS e shadcn/ui consome os serviços SOAP, proporcionando uma interface moderna e responsiva em ambiente de intranet. A aplicação é dockerizada com Docker Compose.',
+      'O TransLog segue uma arquitetura de três camadas: o frontend React consome uma API REST intermediária desenvolvida em Express, que por sua vez se comunica com o backend legado via Web Services SOAP. O backend Spring Boot 3.2 expõe operações SOAP (criação, rastreamento, atualização e cancelamento de entregas) seguindo contratos XSD. O banco PostgreSQL armazena os dados. O Express atua como tradutor entre o formato REST do frontend e o protocolo SOAP do sistema legado. Toda a aplicação é dockerizada com Docker Compose.',
     limitations: [],
     links: {
       github: 'https://github.com/pedro-Trovo/translog',

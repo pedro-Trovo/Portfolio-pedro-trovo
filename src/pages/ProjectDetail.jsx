@@ -67,9 +67,11 @@ function ProjectDetail() {
           <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             <FontAwesomeIcon icon={faGithub} /> GitHub
           </a>
-          <a href={project.links.site} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-            <FontAwesomeIcon icon={faExternalLinkAlt} /> Site
-          </a>
+          {project.links.site && (
+            <a href={project.links.site} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <FontAwesomeIcon icon={faExternalLinkAlt} /> Site
+            </a>
+          )}
           {project.links.doi && (
             <a href={project.links.doi} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               <FontAwesomeIcon icon={faBookOpen} /> DOI
@@ -113,14 +115,16 @@ function ProjectDetail() {
         </div>
       </section>
 
-      <section className="project-detail-section">
-        <h2 className="project-detail-section-title">Limitações conhecidas</h2>
-        <ul className="project-detail-features project-detail-limitations">
-          {project.limitations.map((l, i) => (
-            <li key={i}>{l}</li>
-          ))}
-        </ul>
-      </section>
+      {project.limitations.length > 0 && (
+        <section className="project-detail-section">
+          <h2 className="project-detail-section-title">Limitações conhecidas</h2>
+          <ul className="project-detail-features project-detail-limitations">
+            {project.limitations.map((l, i) => (
+              <li key={i}>{l}</li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="project-detail-section">
         <h2 className="project-detail-section-title">Galeria</h2>

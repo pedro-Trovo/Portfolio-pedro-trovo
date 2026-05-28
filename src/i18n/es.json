@@ -1,0 +1,49 @@
+{
+  "nav.home": "Inicio",
+  "nav.projects": "Proyectos",
+  "nav.experiences": "Experiencia",
+  "nav.contact": "Contacto",
+
+  "home.name": "Pedro Trovo",
+  "home.title": "Backend Developer",
+  "home.bio": "Desarrollador backend con experiencia en la creación de sistemas robustos y escalables. Apasionado por la tecnología, el código limpio y las soluciones bien diseñadas.",
+  "home.cv_download": "Curriculum Vitae",
+  "home.projects_cta": "Proyectos",
+  "home.experiences_cta": "Experiencia",
+  "home.contact_cta": "Contáctame",
+
+  "projects.title": "Proyectos",
+  "projects.all": "Todos",
+  "projects.view_details": "Ver detalles",
+
+  "experiences.title": "Experiencia",
+  "experiences.view_details": "Ver detalles",
+  "experiences.hide_details": "Ocultar detalles",
+
+  "project_detail.back": "Volver",
+  "project_detail.about": "Acerca de",
+  "project_detail.features": "Funcionalidades",
+  "project_detail.architecture": "Arquitectura",
+  "project_detail.tech": "Tecnologías",
+  "project_detail.limitations": "Limitaciones conocidas",
+  "project_detail.gallery": "Galería",
+  "project_detail.not_found": "Proyecto no encontrado",
+  "project_detail.back_to_projects": "Volver a proyectos",
+
+  "contact.title": "Contacto",
+  "contact.subtitle": "¿Tienes un proyecto en mente o quieres conversar? Envíame un mensaje.",
+  "contact.name": "Nombre",
+  "contact.email": "Email",
+  "contact.subject": "Asunto",
+  "contact.message": "Mensaje",
+  "contact.send": "Enviar mensaje",
+  "contact.sending": "Enviando...",
+  "contact.success": "¡Mensaje enviado con éxito! Te responderé pronto.",
+  "contact.error": "Error al enviar el mensaje. Inténtalo de nuevo más tarde.",
+
+  "footer.copyright": "Pedro Trovo © 2026",
+
+  "404.title": "Página no encontrada",
+  "404.message": "La página que buscas no existe o ha sido movida.",
+  "404.back": "Volver al Inicio"
+}

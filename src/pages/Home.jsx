@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
+import CVModal from '../components/CVModal'
 
 const skills = ['Java', 'Spring Boot', 'SQL', 'Docker', 'REST APIs', 'Git']
 
@@ -20,6 +22,7 @@ const fadeUp = {
 
 function Home() {
   const { t, language } = useLanguage()
+  const [showCV, setShowCV] = useState(false)
 
   return (
     <>
@@ -55,11 +58,15 @@ function Home() {
             <motion.div className="home-photo" variants={fadeUp}>
               <img src="/profile/161767490.png" alt="Pedro Trovo" className="home-photo-img" />
             </motion.div>
-            <motion.div variants={fadeUp}>
-              <a href="/cv.pdf" download className="btn btn-primary">
-                <FontAwesomeIcon icon={faDownload} /> {t('home.cv_download')}
+            <motion.div className="home-cv-buttons" variants={fadeUp}>
+              <button onClick={() => setShowCV(true)} className="btn btn-primary">
+                <FontAwesomeIcon icon={faEye} /> {t('home.cv_download')}
+              </button>
+              <a href="/cv.pdf" download className="btn btn-secondary" title="Download PDF">
+                <FontAwesomeIcon icon={faDownload} />
               </a>
             </motion.div>
+            <CVModal open={showCV} onClose={() => setShowCV(false)} />
           </motion.div>
 
           <motion.div

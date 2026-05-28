@@ -291,22 +291,10 @@ main {
   object-fit: cover;
 }
 
-.home-photo-buttons {
+.home-cv-buttons {
   display: flex;
+  gap: 0.5rem;
   align-items: stretch;
-  gap: 0;
-}
-
-.home-photo-buttons .btn:first-child {
-  border-radius: 8px 0 0 8px;
-}
-
-.home-photo-buttons .btn:last-child {
-  border-radius: 0 8px 8px 0;
-}
-
-.home-photo-buttons .btn + .btn {
-  margin-left: -1px;
 }
 
 .home-info {
@@ -368,100 +356,77 @@ main {
    CV Modal
    ============================================ */
 
-.services-section {
-  padding: 4rem 2rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.service-card {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: border-color 0.2s;
-}
-
-.service-card:hover {
-  border-color: var(--color-accent);
-}
-
-.service-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+.cv-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-accent-dim);
-  border-radius: 10px;
-  color: var(--color-accent);
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
+  padding: 2rem;
 }
 
-.service-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
-}
-
-.service-desc {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-/* ============================================
-   Metrics Section
-   ============================================ */
-
-.metrics-section {
-  padding: 2rem 2rem 4rem;
-}
-
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.metric-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 1.5rem 1rem;
+.cv-modal {
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  background-color: var(--color-bg-card);
-  transition: border-color 0.2s;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.metric-card:hover {
+.cv-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cv-modal-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.cv-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-modal-close {
+  background: none;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cv-modal-close:hover {
+  color: var(--color-accent);
   border-color: var(--color-accent);
 }
 
-.metric-value {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--color-accent);
-  font-family: var(--font-heading);
+.cv-modal-body {
+  flex: 1;
+  min-height: 60vh;
+  display: flex;
 }
 
-.metric-label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  text-align: center;
-  font-weight: 500;
+.cv-embed {
+  width: 100%;
+  height: 100%;
+  min-height: 60vh;
+  border: none;
 }
 
 /* ============================================

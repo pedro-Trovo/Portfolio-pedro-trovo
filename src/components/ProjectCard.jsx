@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../i18n'
 
 const MotionLink = motion(Link)
 
 function ProjectCard({ project }) {
+  const { t } = useLanguage()
+
   return (
     <MotionLink
       to={`/projetos/${project.slug}`}
@@ -19,7 +22,7 @@ function ProjectCard({ project }) {
       </div>
       <div className="project-card-body">
         <h3 className="project-card-title">{project.title}</h3>
-        <p className="project-card-desc text-muted">{project.description}</p>
+        <p className="project-card-desc text-muted">{t(`project.${project.slug}.description`)}</p>
         <div className="project-card-tags">
           {project.tags.map((tag) => (
             <span key={tag} className="project-tag">{tag}</span>

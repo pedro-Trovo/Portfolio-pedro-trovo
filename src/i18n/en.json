@@ -6,31 +6,14 @@
 
   "home.name": "Pedro Trovo",
   "home.title": "Backend Developer",
-  "home.status": "Open to new opportunities",
   "home.bio": "Backend developer with experience building robust and scalable systems. Passionate about technology, clean code, and well-designed solutions.",
   "home.cv_download": "Curriculum Vitae",
   "home.projects_cta": "Projects",
   "home.experiences_cta": "Experience",
   "home.contact_cta": "Get in touch",
 
-  "services.title": "Services",
-  "services.api_title": "REST APIs",
-  "services.api_desc": "Robust API development with Spring Boot, Express, and REST best practices.",
-  "services.ms_title": "Microservices",
-  "services.ms_desc": "Distributed architecture with Docker, service communication, and scalability.",
-  "services.integration_title": "Integrations",
-  "services.integration_desc": "System integration via SOAP, MFT, and third-party APIs.",
-  "services.devops_title": "DevOps",
-  "services.devops_desc": "Containerization with Docker, CI/CD, and cloud deployment.",
-
-  "metrics.projects": "Projects",
-  "metrics.months": "Months of Experience",
-  "metrics.techs": "Technologies Mastered",
-  "metrics.clients": "Client Served",
-
   "projects.title": "Projects",
   "projects.all": "All",
-  "projects.view_details": "View details",
 
   "experiences.title": "Experience",
   "experiences.view_details": "View details",
@@ -58,9 +41,42 @@
   "contact.error": "Error sending message. Please try again later.",
 
   "footer.copyright": "Pedro Trovo © 2026",
-  "footer.made_with": "Built with React + Vite",
 
   "404.title": "Page not found",
   "404.message": "The page you're looking for doesn't exist or has been moved.",
-  "404.back": "Back to Home"
+  "404.back": "Back to Home",
+
+  "tech.frontend": "Frontend",
+  "tech.backend": "Backend",
+  "tech.devops": "DevOps",
+  "tech.desktop": "Desktop",
+  "tech.api_rest": "API REST",
+  "tech.database": "Database",
+
+  "project.morslum.description": "Interactive platform for morphosyntactic analysis of the Portuguese language using NLP.",
+  "project.morslum.about": "MORSLUM is an academic platform developed as a Scientific Initiation project at FATEC Ipiranga, aiming to make learning morphosyntactic analysis of the Portuguese language more interactive and accessible. Using natural language processing (NLP) with spaCy's pt_core_news_sm model, the platform can classify each word in a sentence grammatically and generate syntactic dependency tree visualizations. Beyond the analyzer, the system includes an educational quiz that automatically generates questions from a database of 500 Brazilian Portuguese sentences. The project was developed over 11 months, covering from theoretical review of grammar and NLP to implementation, testing, and desktop packaging.",
+  "project.morslum.architecture": "The application follows a three-layer architecture: the React frontend with PrimeReact consumes a REST API built with Flask, which in turn uses spaCy for the linguistic processing pipeline. A Redis database is used for caching frequent analyses. The entire infrastructure can be orchestrated with Docker Compose (Redis + Backend + Frontend served by Nginx). For desktop distribution, Electron packages the compiled frontend together with a portable Python 3.12 runtime containing Flask, spaCy, and all necessary dependencies — eliminating the need for manual Python or package installation by the end user.",
+  "project.morslum.features.0": "Morphosyntactic analyzer that classifies each word of a sentence into its grammatical class (noun, verb, adjective, adverb, etc.)",
+  "project.morslum.features.1": "SVG syntactic dependency tree generation to visualize relationships between sentence terms",
+  "project.morslum.features.2": "Educational quiz with auto-generated questions from a bank of 500 Brazilian Portuguese sentences",
+  "project.morslum.features.3": "Desktop application using Electron that packages the Python backend + frontend into a single installer (NSIS)",
+  "project.morslum.features.4": "Detailed analysis statistics including grammatical class counts and text metrics",
+  "project.morslum.features.5": "Complete infrastructure with Docker Compose (Redis + Flask API + Nginx Frontend) for simplified deployment",
+  "project.morslum.limitations.0": "spaCy's pt_core_news_sm model doesn't recognize contractions like 'da', 'do', and 'na' as preposition + article combinations — treating them only as simple prepositions",
+  "project.morslum.limitations.1": "The model may confuse adjectives with past participles in certain contexts (e.g., 'lindo' vs 'encontrado')",
+  "project.morslum.limitations.2": "Accuracy is reduced compared to larger models (pt_core_news_lg or transformer), but the small model was intentionally chosen to enable desktop packaging with embedded Python (~50MB vs ~500MB)",
+  "project.morslum.limitations.3": "Syntactic analysis depends on sentence segmentation quality — poorly punctuated texts may generate incorrect trees",
+  "project.morslum.context": "Scientific Initiation Project — FATEC Ipiranga (2025-2026)",
+
+  "project.translog.description": "Modern internal (intranet) dashboard connected to a legacy system via SOAP. Express acts as an intermediary REST API between the React frontend and the legacy SOAP backend.",
+  "project.translog.about": "TransLog is a modern internal (intranet) dashboard connected to a legacy system via SOAP. It is an integration project between REST and SOAP, where an intermediary Express REST API bridges the React frontend and the legacy SOAP delivery management backend. The system offers everything from delivery registration to detailed tracking with a status timeline, following a predefined transition flow that ensures the integrity of the logistics process.",
+  "project.translog.architecture": "TransLog follows a three-layer architecture: the React frontend consumes an intermediary REST API built with Express, which communicates with the legacy backend via SOAP Web Services. The Spring Boot 3.2 backend exposes SOAP operations (creation, tracking, update, and cancellation of deliveries) following XSD contracts. PostgreSQL stores the data. Express acts as a translator between the frontend's REST format and the legacy system's SOAP protocol. The entire application is Dockerized with Docker Compose.",
+  "project.translog.features.0": "Delivery creation with sender, recipient, address, and weight data",
+  "project.translog.features.1": "Tracking by tracking code with complete status history timeline",
+  "project.translog.features.2": "Status update with valid transitions (Picked Up → In Transit → Out for Delivery → Delivered / Failed Attempt)",
+  "project.translog.features.3": "Delivery cancellation with reason recording and business rule validation",
+  "project.translog.features.4": "Filters by period, status, and tracking code search",
+  "project.translog.features.5": "Dashboard with bar chart of status distribution using ECharts",
+  "project.translog.features.6": "Automatic tracking code generation in TL-YYYYMMDD-NNNN format",
+  "project.translog.context": "Full-Stack Project — Personal Development"
 }

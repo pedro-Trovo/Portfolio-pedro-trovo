@@ -6,31 +6,14 @@
 
   "home.name": "Pedro Trovo",
   "home.title": "Backend Developer",
-  "home.status": "Disponível para novas oportunidades",
   "home.bio": "Desenvolvedor backend com experiência em construir sistemas robustos e escaláveis. Apaixonado por tecnologia, código limpo e soluções bem projetadas.",
   "home.cv_download": "Curriculum Vitae",
   "home.projects_cta": "Projetos",
   "home.experiences_cta": "Experiências",
   "home.contact_cta": "Entre em contato",
 
-  "services.title": "Serviços",
-  "services.api_title": "APIs REST",
-  "services.api_desc": "Desenvolvimento de APIs robustas com Spring Boot, Express e boas práticas REST.",
-  "services.ms_title": "Microsserviços",
-  "services.ms_desc": "Arquitetura distribuída com Docker, comunicação entre serviços e escalabilidade.",
-  "services.integration_title": "Integrações",
-  "services.integration_desc": "Integração de sistemas via SOAP, MFT e APIs de terceiros.",
-  "services.devops_title": "DevOps",
-  "services.devops_desc": "Containerização com Docker, CI/CD e deploy em ambientes cloud.",
-
-  "metrics.projects": "Projetos",
-  "metrics.months": "Meses de Experiência",
-  "metrics.techs": "Tecnologias Dominadas",
-  "metrics.clients": "Cliente Atendido",
-
   "projects.title": "Projetos",
   "projects.all": "Todos",
-  "projects.view_details": "Ver detalhes",
 
   "experiences.title": "Experiências",
   "experiences.view_details": "Ver detalhes",
@@ -58,9 +41,42 @@
   "contact.error": "Erro ao enviar mensagem. Tente novamente mais tarde.",
 
   "footer.copyright": "Pedro Trovo © 2026",
-  "footer.made_with": "Feito com React + Vite",
 
   "404.title": "Página não encontrada",
   "404.message": "A página que você procura não existe ou foi movida.",
-  "404.back": "Voltar para Home"
+  "404.back": "Voltar para Home",
+
+  "tech.frontend": "Frontend",
+  "tech.backend": "Backend",
+  "tech.devops": "DevOps",
+  "tech.desktop": "Desktop",
+  "tech.api_rest": "API REST",
+  "tech.database": "Banco",
+
+  "project.morslum.description": "Plataforma interativa de análise morfossintática da língua portuguesa utilizando NLP.",
+  "project.morslum.about": "O MORSLUM é uma plataforma acadêmica desenvolvida como projeto de Iniciação Científica na FATEC Ipiranga, com o objetivo de tornar o aprendizado de análise morfossintática da língua portuguesa mais interativo e acessível. Utilizando processamento de linguagem natural (NLP) com o modelo pt_core_news_sm do spaCy, a plataforma é capaz de classificar gramaticalmente cada palavra de uma frase e gerar visualizações de árvores de dependência sintática, facilitando a compreensão das relações entre os termos da oração. Além do analisador, o sistema conta com um quiz educativo que gera automaticamente questões a partir de um banco de 500 frases do português brasileiro, desafiando o usuário a identificar classes gramaticais em diferentes contextos. O projeto foi desenvolvido ao longo de 11 meses, abrangendo desde a revisão teórica de gramática e NLP até a implementação, testes e empacotamento desktop.",
+  "project.morslum.architecture": "A aplicação segue uma arquitetura de três camadas: o frontend em React com PrimeReact consome uma API REST desenvolvida em Flask, que por sua vez utiliza o spaCy para o pipeline de processamento linguístico. Um banco Redis é utilizado para cache de análises frequentes. Toda a infraestrutura pode ser orquestrada com Docker Compose (Redis + Backend + Frontend servido por Nginx). Para distribuição desktop, o Electron empacota o frontend compilado juntamente com um runtime portátil do Python 3.12 que contém o Flask, spaCy e todas as dependências necessárias — eliminando a necessidade de instalação manual de Python ou pacotes pelo usuário final.",
+  "project.morslum.features.0": "Analisador morfossintático que classifica cada palavra da frase em sua classe gramatical (substantivo, verbo, adjetivo, advérbio, etc.)",
+  "project.morslum.features.1": "Geração de árvore de dependências sintáticas em SVG para visualizar as relações entre os termos da oração",
+  "project.morslum.features.2": "Quiz educativo com questões geradas automaticamente a partir de um banco de 500 frases do português brasileiro",
+  "project.morslum.features.3": "Aplicativo desktop com Electron que empacota o backend Python + frontend em um único instalador (NSIS)",
+  "project.morslum.features.4": "Estatísticas detalhadas da análise, incluindo contagem de classes gramaticais e métricas do texto",
+  "project.morslum.features.5": "Infraestrutura completa com Docker Compose (Redis + API Flask + Frontend Nginx) para deploy simplificado",
+  "project.morslum.limitations.0": "O modelo pt_core_news_sm do spaCy não reconhece contrações como 'da', 'do' e 'na' como combinações de preposição + artigo — tratando-as apenas como preposições simples",
+  "project.morslum.limitations.1": "O modelo pode confundir adjetivos com particípios passados em certos contextos (ex: 'lindo' vs 'encontrado')",
+  "project.morslum.limitations.2": "A acurácia é reduzida em comparação com modelos maiores (pt_core_news_lg ou transformer), porém o modelo pequeno foi escolhido intencionalmente para viabilizar o empacotamento desktop com Python embutido (~50MB vs ~500MB)",
+  "project.morslum.limitations.3": "A análise sintática depende da qualidade da segmentação de frases — textos mal pontuados podem gerar árvores incorretas",
+  "project.morslum.context": "Projeto de Iniciação Científica — FATEC Ipiranga (2025-2026)",
+
+  "project.translog.description": "Painel interno (intranet) moderno conectado a sistema legado via SOAP. O Express atua como API REST intermediária entre o frontend React e o backend SOAP legado.",
+  "project.translog.about": "O TransLog é um painel interno (intranet) moderno conectado a um sistema legado via SOAP. Trata-se de um projeto de integração entre REST e SOAP, onde uma API REST intermediária em Express faz a ponte entre o frontend React e o backend SOAP legado de gestão de entregas. O sistema oferece desde o cadastro de entregas até o rastreamento detalhado com timeline de status, seguindo um fluxo de transições pré-definido que garante a integridade do processo logístico.",
+  "project.translog.architecture": "O TransLog segue uma arquitetura de três camadas: o frontend React consome uma API REST intermediária desenvolvida em Express, que por sua vez se comunica com o backend legado via Web Services SOAP. O backend Spring Boot 3.2 expõe operações SOAP (criação, rastreamento, atualização e cancelamento de entregas) seguindo contratos XSD. O banco PostgreSQL armazena os dados. O Express atua como tradutor entre o formato REST do frontend e o protocolo SOAP do sistema legado. Toda a aplicação é dockerizada com Docker Compose.",
+  "project.translog.features.0": "Criação de entregas com dados de remetente, destinatário, endereço e peso",
+  "project.translog.features.1": "Rastreamento por código de rastreio com timeline completa do histórico de status",
+  "project.translog.features.2": "Atualização de status com transições válidas (Coletado → Em Trânsito → Saiu para Entrega → Entregue / Tentativa Falha)",
+  "project.translog.features.3": "Cancelamento de entregas com registro de motivo e validação de regras de negócio",
+  "project.translog.features.4": "Filtros por período, status e busca por código de rastreio",
+  "project.translog.features.5": "Dashboard com gráfico de barras da distribuição de status utilizando ECharts",
+  "project.translog.features.6": "Geração automática de código de rastreio no formato TL-YYYYMMDD-NNNN",
+  "project.translog.context": "Projeto Full-Stack — Desenvolvimento próprio"
 }

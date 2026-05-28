@@ -15,6 +15,16 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { projects } from '../data/projects'
 import { useLanguage } from '../i18n'
 
+const techCategoryMap = {
+  Frontend: 'tech.frontend',
+  Backend: 'tech.backend',
+  'API REST': 'tech.api_rest',
+  DevOps: 'tech.devops',
+  Desktop: 'tech.desktop',
+  Banco: 'tech.database',
+  Database: 'tech.database',
+}
+
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
@@ -60,14 +70,16 @@ function ProjectDetail() {
     )
   }
 
+  const p = (key) => t(`project.${project.slug}.${key}`)
+
   return (
     <>
       <Helmet>
         <html lang={language} />
         <title>{project.title} | Pedro Trovo</title>
-        <meta name="description" content={project.description} />
+        <meta name="description" content={p('description')} />
         <meta property="og:title" content={`${project.title} | Pedro Trovo`} />
-        <meta property="og:description" content={project.description} />
+        <meta property="og:description" content={p('description')} />
         <meta property="og:image" content={project.image} />
       </Helmet>
 
@@ -85,7 +97,7 @@ function ProjectDetail() {
             <p className="project-detail-subtitle text-muted">{project.subtitle}</p>
             <h1 className="project-detail-title">{project.title}</h1>
             {project.context && (
-              <p className="project-detail-context text-muted">{project.context}</p>
+              <p className="project-detail-context text-muted">{p('context')}</p>
             )}
           </motion.div>
           <motion.div
@@ -112,21 +124,21 @@ function ProjectDetail() {
 
         <motion.section className="project-detail-section" {...fadeUp}>
           <h2 className="project-detail-section-title">{t('project_detail.about')}</h2>
-          <p className="project-detail-text">{project.about}</p>
+          <p className="project-detail-text">{p('about')}</p>
         </motion.section>
 
         <motion.section className="project-detail-section" {...fadeUp}>
           <h2 className="project-detail-section-title">{t('project_detail.features')}</h2>
           <ul className="project-detail-features">
-            {project.features.map((f, i) => (
-              <li key={i}>{f}</li>
+            {project.features.map((_, i) => (
+              <li key={i}>{p(`features.${i}`)}</li>
             ))}
           </ul>
         </motion.section>
 
         <motion.section className="project-detail-section" {...fadeUp}>
           <h2 className="project-detail-section-title">{t('project_detail.architecture')}</h2>
-          <p className="project-detail-text">{project.architecture}</p>
+          <p className="project-detail-text">{p('architecture')}</p>
         </motion.section>
 
         <motion.section className="project-detail-section" {...fadeUp}>
@@ -134,7 +146,9 @@ function ProjectDetail() {
           <div className="project-detail-stack">
             {project.techStack.map((group) => (
               <div key={group.category} className="project-detail-stack-group">
-                <span className="project-detail-stack-label">{group.category}</span>
+                <span className="project-detail-stack-label">
+                  {t(techCategoryMap[group.category] || group.category)}
+                </span>
                 <div className="project-detail-tags">
                   {group.items.map((item) => (
                     <span key={item} className="project-tag">{item}</span>
@@ -149,8 +163,8 @@ function ProjectDetail() {
           <motion.section className="project-detail-section" {...fadeUp}>
             <h2 className="project-detail-section-title">{t('project_detail.limitations')}</h2>
             <ul className="project-detail-features project-detail-limitations">
-              {project.limitations.map((l, i) => (
-                <li key={i}>{l}</li>
+              {project.limitations.map((_, i) => (
+                <li key={i}>{p(`limitations.${i}`)}</li>
               ))}
             </ul>
           </motion.section>

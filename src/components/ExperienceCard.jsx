@@ -1,11 +1,9 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBuilding, faCalendar, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faBuilding, faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 
 function ExperienceCard({ experience }) {
-  const [expanded, setExpanded] = useState(false)
   const { t } = useLanguage()
 
   const e = (key) => t(`experience.${experience.id}.${key}`)
@@ -40,33 +38,11 @@ function ExperienceCard({ experience }) {
         ))}
       </div>
 
-      <button
-        className="experience-toggle"
-        onClick={() => setExpanded(!expanded)}
-        aria-expanded={expanded}
-      >
-        {expanded ? t('experiences.hide_details') : t('experiences.view_details')}
-        <FontAwesomeIcon icon={expanded ? faChevronUp : faChevronDown} />
-      </button>
-
-      <AnimatePresence initial={false}>
-        {expanded && (
-          <motion.div
-            key="highlights"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            style={{ overflow: 'hidden' }}
-          >
-            <ul className="experience-highlights">
-              {experience.highlights.map((_, index) => (
-                <li key={index}>{e(`highlights.${index}`)}</li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ul className="experience-highlights">
+        {experience.highlights.map((_, index) => (
+          <li key={index}>{e(`highlights.${index}`)}</li>
+        ))}
+      </ul>
     </motion.div>
   )
 }

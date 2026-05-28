@@ -976,25 +976,6 @@ main {
   border-color: var(--color-accent);
 }
 
-.experience-toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-  background: none;
-  border: none;
-  color: var(--color-accent);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0.3rem 0;
-  transition: opacity 0.2s;
-}
-
-.experience-toggle:hover {
-  opacity: 0.8;
-}
-
 .experience-highlights {
   list-style: none;
   padding: 0;

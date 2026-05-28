@@ -1,12 +1,21 @@
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuilding, faCalendar, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { useLanguage } from '../i18n'
 
 function ExperienceCard({ experience }) {
   const [expanded, setExpanded] = useState(false)
+  const { t } = useLanguage()
 
   return (
-    <div className="experience-card">
+    <motion.div
+      className="experience-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.35 }}
+    >
       <div className="experience-header">
         <div className="experience-header-left">
           <FontAwesomeIcon icon={faBuilding} className="experience-icon" />
@@ -34,18 +43,29 @@ function ExperienceCard({ experience }) {
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
       >
-        {expanded ? 'Recolher detalhes' : 'Ver detalhes'}
+        {expanded ? t('experiences.hide_details') : t('experiences.view_details')}
         <FontAwesomeIcon icon={expanded ? faChevronUp : faChevronDown} />
       </button>
 
-      {expanded && (
-        <ul className="experience-highlights">
-          {experience.highlights.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            key="highlights"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }}
+          >
+            <ul className="experience-highlights">
+              {experience.highlights.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   )
 }
 

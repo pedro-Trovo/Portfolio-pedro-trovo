@@ -1,8 +1,19 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+const MotionLink = motion(Link)
 
 function ProjectCard({ project }) {
   return (
-    <Link to={`/projetos/${project.slug}`} className="project-card">
+    <MotionLink
+      to={`/projetos/${project.slug}`}
+      className="project-card"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.35 }}
+      whileHover={{ y: -8 }}
+    >
       <div className="project-card-image">
         <img src={project.image} alt={project.title} loading="lazy" />
       </div>
@@ -15,7 +26,7 @@ function ProjectCard({ project }) {
           ))}
         </div>
       </div>
-    </Link>
+    </MotionLink>
   )
 }
 

@@ -1,0 +1,67 @@
+{
+  "nav.home": "Home",
+  "nav.projects": "Projects",
+  "nav.experiences": "Experience",
+  "nav.contact": "Contact",
+
+  "home.name": "Pedro Trovo",
+  "home.title": "Backend Developer",
+  "home.status": "Open to new opportunities",
+  "home.bio": "Backend developer with experience building robust and scalable systems. Passionate about technology, clean code, and well-designed solutions.",
+  "home.cv_download": "Resume",
+  "home.cv_view": "Preview",
+  "home.projects_cta": "Projects",
+  "home.experiences_cta": "Experience",
+  "home.contact_cta": "Get in touch",
+
+  "services.title": "Services",
+  "services.api_title": "REST APIs",
+  "services.api_desc": "Robust API development with Spring Boot, Express, and REST best practices.",
+  "services.ms_title": "Microservices",
+  "services.ms_desc": "Distributed architecture with Docker, service communication, and scalability.",
+  "services.integration_title": "Integrations",
+  "services.integration_desc": "System integration via SOAP, MFT, and third-party APIs.",
+  "services.devops_title": "DevOps",
+  "services.devops_desc": "Containerization with Docker, CI/CD, and cloud deployment.",
+
+  "metrics.projects": "Projects",
+  "metrics.months": "Months of Experience",
+  "metrics.techs": "Technologies Mastered",
+  "metrics.clients": "Client Served",
+
+  "projects.title": "Projects",
+  "projects.all": "All",
+  "projects.view_details": "View details",
+
+  "experiences.title": "Experience",
+  "experiences.view_details": "View details",
+  "experiences.hide_details": "Hide details",
+
+  "project_detail.back": "Back",
+  "project_detail.about": "About",
+  "project_detail.features": "Features",
+  "project_detail.architecture": "Architecture",
+  "project_detail.tech": "Technologies",
+  "project_detail.limitations": "Known Limitations",
+  "project_detail.gallery": "Gallery",
+  "project_detail.not_found": "Project not found",
+  "project_detail.back_to_projects": "Back to projects",
+
+  "contact.title": "Contact",
+  "contact.subtitle": "Have a project in mind or want to chat? Send me a message.",
+  "contact.name": "Name",
+  "contact.email": "Email",
+  "contact.subject": "Subject",
+  "contact.message": "Message",
+  "contact.send": "Send message",
+  "contact.sending": "Sending...",
+  "contact.success": "Message sent successfully! I'll get back to you soon.",
+  "contact.error": "Error sending message. Please try again later.",
+
+  "footer.copyright": "Pedro Trovo © 2026",
+  "footer.made_with": "Built with React + Vite",
+
+  "404.title": "Page not found",
+  "404.message": "The page you're looking for doesn't exist or has been moved.",
+  "404.back": "Back to Home"
+}

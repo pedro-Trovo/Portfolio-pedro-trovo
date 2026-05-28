@@ -5,6 +5,10 @@
 
 :root {
 
+  /* --- Fonts --- */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
   /* --- Backgrounds --- */
   --color-bg-primary:    #060608; /* Deep Void   — fundo principal da página   */
   --color-bg-card:       #080810; /* Card Dark   — cards e seções              */

@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowLeft,
@@ -11,9 +13,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { projects } from '../data/projects'
+import { useLanguage } from '../i18n'
+
+const fadeUp = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-40px' },
+  transition: { duration: 0.35 },
+}
 
 function ProjectDetail() {
   const { slug } = useParams()
+  const { t, language } = useLanguage()
   const project = projects.find((p) => p.slug === slug)
   const [lightboxIndex, setLightboxIndex] = useState(null)
 
@@ -41,129 +52,161 @@ function ProjectDetail() {
   if (!project) {
     return (
       <section className="page">
-        <h1>Projeto não encontrado</h1>
+        <h1>{t('project_detail.not_found')}</h1>
         <p className="text-muted">
-          <Link to="/projetos">Voltar para projetos</Link>
+          <Link to="/projetos">{t('project_detail.back_to_projects')}</Link>
         </p>
       </section>
     )
   }
 
   return (
-    <section className="page project-detail">
-      <Link to="/projetos" className="back-link">
-        <FontAwesomeIcon icon={faArrowLeft} /> Voltar
-      </Link>
+    <>
+      <Helmet>
+        <html lang={language} />
+        <title>{project.title} | Pedro Trovo</title>
+        <meta name="description" content={project.description} />
+        <meta property="og:title" content={`${project.title} | Pedro Trovo`} />
+        <meta property="og:description" content={project.description} />
+        <meta property="og:image" content={project.image} />
+      </Helmet>
 
-      <div className="project-detail-header">
-        <div>
-          <p className="project-detail-subtitle text-muted">{project.subtitle}</p>
-          <h1 className="project-detail-title">{project.title}</h1>
-          {project.context && (
-            <p className="project-detail-context text-muted">{project.context}</p>
-          )}
-        </div>
-        <div className="project-detail-links">
-          <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            <FontAwesomeIcon icon={faGithub} /> GitHub
-          </a>
-          {project.links.site && (
-            <a href={project.links.site} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              <FontAwesomeIcon icon={faExternalLinkAlt} /> Site
+      <section className="page project-detail">
+        <Link to="/projetos" className="back-link">
+          <FontAwesomeIcon icon={faArrowLeft} /> {t('project_detail.back')}
+        </Link>
+
+        <div className="project-detail-header">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+          >
+            <p className="project-detail-subtitle text-muted">{project.subtitle}</p>
+            <h1 className="project-detail-title">{project.title}</h1>
+            {project.context && (
+              <p className="project-detail-context text-muted">{project.context}</p>
+            )}
+          </motion.div>
+          <motion.div
+            className="project-detail-links"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, delay: 0.1 }}
+          >
+            <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <FontAwesomeIcon icon={faGithub} /> GitHub
             </a>
-          )}
-          {project.links.doi && (
-            <a href={project.links.doi} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              <FontAwesomeIcon icon={faBookOpen} /> DOI
-            </a>
-          )}
+            {project.links.site && (
+              <a href={project.links.site} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                <FontAwesomeIcon icon={faExternalLinkAlt} /> Site
+              </a>
+            )}
+            {project.links.doi && (
+              <a href={project.links.doi} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                <FontAwesomeIcon icon={faBookOpen} /> DOI
+              </a>
+            )}
+          </motion.div>
         </div>
-      </div>
 
-      <section className="project-detail-section">
-        <h2 className="project-detail-section-title">Sobre</h2>
-        <p className="project-detail-text">{project.about}</p>
-      </section>
+        <motion.section className="project-detail-section" {...fadeUp}>
+          <h2 className="project-detail-section-title">{t('project_detail.about')}</h2>
+          <p className="project-detail-text">{project.about}</p>
+        </motion.section>
 
-      <section className="project-detail-section">
-        <h2 className="project-detail-section-title">Funcionalidades</h2>
-        <ul className="project-detail-features">
-          {project.features.map((f, i) => (
-            <li key={i}>{f}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="project-detail-section">
-        <h2 className="project-detail-section-title">Arquitetura</h2>
-        <p className="project-detail-text">{project.architecture}</p>
-      </section>
-
-      <section className="project-detail-section">
-        <h2 className="project-detail-section-title">Tecnologias</h2>
-        <div className="project-detail-stack">
-          {project.techStack.map((group) => (
-            <div key={group.category} className="project-detail-stack-group">
-              <span className="project-detail-stack-label">{group.category}</span>
-              <div className="project-detail-tags">
-                {group.items.map((item) => (
-                  <span key={item} className="project-tag">{item}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {project.limitations.length > 0 && (
-        <section className="project-detail-section">
-          <h2 className="project-detail-section-title">Limitações conhecidas</h2>
-          <ul className="project-detail-features project-detail-limitations">
-            {project.limitations.map((l, i) => (
-              <li key={i}>{l}</li>
+        <motion.section className="project-detail-section" {...fadeUp}>
+          <h2 className="project-detail-section-title">{t('project_detail.features')}</h2>
+          <ul className="project-detail-features">
+            {project.features.map((f, i) => (
+              <li key={i}>{f}</li>
             ))}
           </ul>
-        </section>
-      )}
+        </motion.section>
 
-      <section className="project-detail-section">
-        <h2 className="project-detail-section-title">Galeria</h2>
-        <div className="project-detail-gallery">
-          {project.images.map((img, i) => (
-            <button
-              key={i}
-              className="project-detail-gallery-item"
-              onClick={() => setLightboxIndex(i)}
-            >
-              <img src={img} alt={`${project.title} ${i + 1}`} loading="lazy" />
+        <motion.section className="project-detail-section" {...fadeUp}>
+          <h2 className="project-detail-section-title">{t('project_detail.architecture')}</h2>
+          <p className="project-detail-text">{project.architecture}</p>
+        </motion.section>
+
+        <motion.section className="project-detail-section" {...fadeUp}>
+          <h2 className="project-detail-section-title">{t('project_detail.tech')}</h2>
+          <div className="project-detail-stack">
+            {project.techStack.map((group) => (
+              <div key={group.category} className="project-detail-stack-group">
+                <span className="project-detail-stack-label">{group.category}</span>
+                <div className="project-detail-tags">
+                  {group.items.map((item) => (
+                    <span key={item} className="project-tag">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {project.limitations.length > 0 && (
+          <motion.section className="project-detail-section" {...fadeUp}>
+            <h2 className="project-detail-section-title">{t('project_detail.limitations')}</h2>
+            <ul className="project-detail-features project-detail-limitations">
+              {project.limitations.map((l, i) => (
+                <li key={i}>{l}</li>
+              ))}
+            </ul>
+          </motion.section>
+        )}
+
+        <motion.section className="project-detail-section" {...fadeUp}>
+          <h2 className="project-detail-section-title">{t('project_detail.gallery')}</h2>
+          <motion.div
+            className="project-detail-gallery"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.05 } },
+            }}
+          >
+            {project.images.map((img, i) => (
+              <motion.button
+                key={i}
+                className="project-detail-gallery-item"
+                onClick={() => setLightboxIndex(i)}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <img src={img} alt={`${project.title} ${i + 1}`} loading="lazy" />
+              </motion.button>
+            ))}
+          </motion.div>
+        </motion.section>
+
+        {lightboxIndex !== null && (
+          <div className="lightbox" onClick={closeLightbox}>
+            <button className="lightbox-close" onClick={closeLightbox}>
+              <FontAwesomeIcon icon={faTimes} />
             </button>
-          ))}
-        </div>
+            <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); prevImage() }}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <img
+              className="lightbox-image"
+              src={project.images[lightboxIndex]}
+              alt={`${project.title} ${lightboxIndex + 1}`}
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button className="lightbox-nav lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage() }}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+            <span className="lightbox-counter">
+              {lightboxIndex + 1} / {project.images.length}
+            </span>
+          </div>
+        )}
       </section>
-
-      {lightboxIndex !== null && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <button className="lightbox-close" onClick={closeLightbox}>
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-          <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); prevImage() }}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          <img
-            className="lightbox-image"
-            src={project.images[lightboxIndex]}
-            alt={`${project.title} ${lightboxIndex + 1}`}
-            onClick={(e) => e.stopPropagation()}
-          />
-          <button className="lightbox-nav lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage() }}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-          <span className="lightbox-counter">
-            {lightboxIndex + 1} / {project.images.length}
-          </span>
-        </div>
-      )}
-    </section>
+    </>
   )
 }
 

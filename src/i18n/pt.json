@@ -1,0 +1,67 @@
+{
+  "nav.home": "Home",
+  "nav.projects": "Projetos",
+  "nav.experiences": "Experiências",
+  "nav.contact": "Contato",
+
+  "home.name": "Pedro Trovo",
+  "home.title": "Backend Developer",
+  "home.status": "Disponível para novas oportunidades",
+  "home.bio": "Desenvolvedor backend com experiência em construir sistemas robustos e escaláveis. Apaixonado por tecnologia, código limpo e soluções bem projetadas.",
+  "home.cv_download": "Curriculum Vitae",
+  "home.cv_view": "Visualizar",
+  "home.projects_cta": "Projetos",
+  "home.experiences_cta": "Experiências",
+  "home.contact_cta": "Entre em contato",
+
+  "services.title": "Serviços",
+  "services.api_title": "APIs REST",
+  "services.api_desc": "Desenvolvimento de APIs robustas com Spring Boot, Express e boas práticas REST.",
+  "services.ms_title": "Microsserviços",
+  "services.ms_desc": "Arquitetura distribuída com Docker, comunicação entre serviços e escalabilidade.",
+  "services.integration_title": "Integrações",
+  "services.integration_desc": "Integração de sistemas via SOAP, MFT e APIs de terceiros.",
+  "services.devops_title": "DevOps",
+  "services.devops_desc": "Containerização com Docker, CI/CD e deploy em ambientes cloud.",
+
+  "metrics.projects": "Projetos",
+  "metrics.months": "Meses de Experiência",
+  "metrics.techs": "Tecnologias Dominadas",
+  "metrics.clients": "Cliente Atendido",
+
+  "projects.title": "Projetos",
+  "projects.all": "Todos",
+  "projects.view_details": "Ver detalhes",
+
+  "experiences.title": "Experiências",
+  "experiences.view_details": "Ver detalhes",
+  "experiences.hide_details": "Recolher detalhes",
+
+  "project_detail.back": "Voltar",
+  "project_detail.about": "Sobre",
+  "project_detail.features": "Funcionalidades",
+  "project_detail.architecture": "Arquitetura",
+  "project_detail.tech": "Tecnologias",
+  "project_detail.limitations": "Limitações conhecidas",
+  "project_detail.gallery": "Galeria",
+  "project_detail.not_found": "Projeto não encontrado",
+  "project_detail.back_to_projects": "Voltar para projetos",
+
+  "contact.title": "Contato",
+  "contact.subtitle": "Tem um projeto em mente ou quer conversar? Envie uma mensagem.",
+  "contact.name": "Nome",
+  "contact.email": "Email",
+  "contact.subject": "Assunto",
+  "contact.message": "Mensagem",
+  "contact.send": "Enviar mensagem",
+  "contact.sending": "Enviando...",
+  "contact.success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+  "contact.error": "Erro ao enviar mensagem. Tente novamente mais tarde.",
+
+  "footer.copyright": "Pedro Trovo © 2026",
+  "footer.made_with": "Feito com React + Vite",
+
+  "404.title": "Página não encontrada",
+  "404.message": "A página que você procura não existe ou foi movida.",
+  "404.back": "Voltar para Home"
+}

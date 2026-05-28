@@ -78,5 +78,15 @@
   "project.translog.features.4": "Filtros por período, status e busca por código de rastreio",
   "project.translog.features.5": "Dashboard com gráfico de barras da distribuição de status utilizando ECharts",
   "project.translog.features.6": "Geração automática de código de rastreio no formato TL-YYYYMMDD-NNNN",
-  "project.translog.context": "Projeto Full-Stack — Desenvolvimento próprio"
+  "project.translog.context": "Projeto Full-Stack — Desenvolvimento próprio",
+
+  "experience.edi-labs.description": "Minha experiência na Edi-Labs foi voltada para sustentação, monitoramento e integração de arquivos em ambiente corporativo, atuando diretamente com soluções de MFT (Managed File Transfer) através da plataforma Axway SecureTransport.",
+  "experience.edi-labs.highlights.0": "Criação e manutenção de fluxos de integração para troca segura de arquivos entre clientes e parceiros utilizando protocolos SFTP e SSH",
+  "experience.edi-labs.highlights.1": "Criação de credenciais, configuração de acessos e liberações para parceiros externos se conectarem à plataforma MFT",
+  "experience.edi-labs.highlights.2": "Suporte técnico aos clientes em dúvidas sobre fluxos, arquivos trafegados, testes de conectividade, gerenciamento e reset de usuários",
+  "experience.edi-labs.highlights.3": "Monitoramento contínuo da plataforma MFT, análise de falhas operacionais, identificação de arquivos parados e troubleshooting de incidentes",
+  "experience.edi-labs.highlights.4": "Elaboração de GMUDs e acompanhamento de mudanças em ambiente corporativo",
+  "experience.edi-labs.highlights.5": "Relacionamento operacional com clientes: reuniões semanais para acompanhamento de chamados, preparação de pautas e atualização de tickets",
+  "experience.edi-labs.highlights.6": "Desenvolvimento de automações para geração de relatórios True-Up do Axway SecureTransport (controle mensal de usuários adhoc e regulares ativos)",
+  "experience.edi-labs.highlights.7": "Automação do envio de relatórios operacionais e de controle de licenciamento por e-mail"
 }

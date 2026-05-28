@@ -78,5 +78,15 @@
   "project.translog.features.4": "Filters by period, status, and tracking code search",
   "project.translog.features.5": "Dashboard with bar chart of status distribution using ECharts",
   "project.translog.features.6": "Automatic tracking code generation in TL-YYYYMMDD-NNNN format",
-  "project.translog.context": "Full-Stack Project — Personal Development"
+  "project.translog.context": "Full-Stack Project — Personal Development",
+
+  "experience.edi-labs.description": "My experience at Edi-Labs focused on support, monitoring, and file integration in a corporate environment, working directly with MFT (Managed File Transfer) solutions through the Axway SecureTransport platform.",
+  "experience.edi-labs.highlights.0": "Creation and maintenance of integration flows for secure file exchange between clients and partners using SFTP and SSH protocols",
+  "experience.edi-labs.highlights.1": "Credential creation, access configuration, and authorizations for external partners to connect to the MFT platform",
+  "experience.edi-labs.highlights.2": "Technical support to clients on flows, file transfers, connectivity tests, user management, and password resets",
+  "experience.edi-labs.highlights.3": "Continuous monitoring of the MFT platform, operational failure analysis, stalled file identification, and incident troubleshooting",
+  "experience.edi-labs.highlights.4": "GMUD preparation and change management in corporate environment",
+  "experience.edi-labs.highlights.5": "Operational client relationship: weekly meetings to follow up on tickets, agenda preparation, and ticket updates",
+  "experience.edi-labs.highlights.6": "Development of automations for True-Up report generation of Axway SecureTransport (monthly adhoc and regular active user control)",
+  "experience.edi-labs.highlights.7": "Automation of operational and licensing control report sending via email"
 }

@@ -8,6 +8,8 @@ function ExperienceCard({ experience }) {
   const [expanded, setExpanded] = useState(false)
   const { t } = useLanguage()
 
+  const e = (key) => t(`experience.${experience.id}.${key}`)
+
   return (
     <motion.div
       className="experience-card"
@@ -30,7 +32,7 @@ function ExperienceCard({ experience }) {
         </div>
       </div>
 
-      <p className="experience-description">{experience.description}</p>
+      <p className="experience-description">{e('description')}</p>
 
       <div className="experience-tags">
         {experience.tags.map((tag) => (
@@ -58,8 +60,8 @@ function ExperienceCard({ experience }) {
             style={{ overflow: 'hidden' }}
           >
             <ul className="experience-highlights">
-              {experience.highlights.map((item, index) => (
-                <li key={index}>{item}</li>
+              {experience.highlights.map((_, index) => (
+                <li key={index}>{e(`highlights.${index}`)}</li>
               ))}
             </ul>
           </motion.div>

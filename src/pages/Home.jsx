@@ -1,14 +1,9 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye, faDownload } from '@fortawesome/free-solid-svg-icons'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
-import ServiceCard from '../components/ServiceCard'
-import Metrics from '../components/Metrics'
-import CVModal from '../components/CVModal'
-import { services } from '../data/services'
 
 const skills = ['Java', 'Spring Boot', 'SQL', 'Docker', 'REST APIs', 'Git']
 
@@ -25,7 +20,6 @@ const fadeUp = {
 
 function Home() {
   const { t, language } = useLanguage()
-  const [showCV, setShowCV] = useState(false)
 
   return (
     <>
@@ -61,12 +55,9 @@ function Home() {
             <motion.div className="home-photo" variants={fadeUp}>
               <img src="/profile/161767490.png" alt="Pedro Trovo" className="home-photo-img" />
             </motion.div>
-            <motion.div className="home-photo-buttons" variants={fadeUp}>
-              <button onClick={() => setShowCV(true)} className="btn btn-secondary">
-                <FontAwesomeIcon icon={faEye} /> {t('home.cv_view')}
-              </button>
-              <a href="/cv.pdf" download className="btn btn-icon" aria-label={t('home.cv_download')}>
-                <FontAwesomeIcon icon={faDownload} />
+            <motion.div variants={fadeUp}>
+              <a href="/cv.pdf" download className="btn btn-primary">
+                <FontAwesomeIcon icon={faDownload} /> {t('home.cv_download')}
               </a>
             </motion.div>
           </motion.div>
@@ -77,10 +68,6 @@ function Home() {
             initial="initial"
             animate="animate"
           >
-            <motion.div className="home-status" variants={fadeUp}>
-              <span className="status-dot" />
-              <span className="status-text">{t('home.status')}</span>
-            </motion.div>
             <motion.h1 className="home-name" variants={fadeUp}>{t('home.name')}</motion.h1>
             <motion.p className="home-title text-muted" variants={fadeUp}>{t('home.title')}</motion.p>
             <motion.p className="home-bio text-muted" variants={fadeUp}>{t('home.bio')}</motion.p>
@@ -97,26 +84,6 @@ function Home() {
           </motion.div>
         </div>
       </section>
-
-      <section className="page services-section">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {t('services.title')}
-        </motion.h2>
-        <div className="services-grid">
-          {services.map((s, i) => (
-            <ServiceCard key={s.id} service={s} index={i} />
-          ))}
-        </div>
-      </section>
-
-      <Metrics />
-
-      <CVModal open={showCV} onClose={() => setShowCV(false)} />
     </>
   )
 }

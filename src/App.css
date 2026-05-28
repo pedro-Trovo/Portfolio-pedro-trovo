@@ -116,24 +116,71 @@
    Language Toggle
    ============================================ */
 
-.lang-toggle {
+.lang-wrapper {
+  position: relative;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
   background: none;
   border: 1px solid var(--color-text-muted);
   border-radius: 6px;
   color: var(--color-text-muted);
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1;
-  padding: 0.35rem 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
   cursor: pointer;
   transition: color 0.3s, border-color 0.3s, background-color 0.3s;
-  letter-spacing: 0.5px;
 }
 
-.lang-toggle:hover {
+.lang-btn:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
   background-color: var(--color-accent-dim);
+}
+
+.lang-code {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 130px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lang-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.lang-option:hover {
+  background-color: var(--color-accent-dim);
+  color: var(--color-accent);
+}
+
+.lang-option--active {
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 /* ============================================

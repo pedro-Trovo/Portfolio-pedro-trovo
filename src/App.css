@@ -152,33 +152,19 @@
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.footer-links a {
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--color-accent);
-}
-
 .footer-social {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 0.75rem;
 }
 
 .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--color-text-muted);
-  font-size: 1.25rem;
+  font-size: 0.9rem;
   transition: color 0.2s;
 }
 
@@ -187,11 +173,7 @@
 }
 
 .footer-copy {
-  margin-bottom: 0.25rem;
-}
-
-.footer-tech {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 /* ============================================

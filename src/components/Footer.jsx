@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -9,12 +8,6 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-links">
-        <Link to="/">{t('nav.home')}</Link>
-        <Link to="/projetos">{t('nav.projects')}</Link>
-        <Link to="/experiencias">{t('nav.experiences')}</Link>
-        <Link to="/contato">{t('nav.contact')}</Link>
-      </div>
       <div className="footer-social">
         <a
           href="https://github.com/pedro-Trovo"
@@ -22,7 +15,7 @@ function Footer() {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} /> GitHub
         </a>
         <a
           href="https://www.linkedin.com/in/pedro-trovo-link/"
@@ -30,14 +23,13 @@ function Footer() {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
         </a>
         <a href="mailto:pedroramostrovo@gmail.com" aria-label="Email">
-          <FontAwesomeIcon icon={faEnvelope} />
+          <FontAwesomeIcon icon={faEnvelope} /> Email
         </a>
       </div>
       <p className="footer-copy">{t('footer.copyright')}</p>
-      <p className="footer-tech text-muted">{t('footer.made_with')}</p>
     </footer>
   )
 }

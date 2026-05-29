@@ -16,6 +16,17 @@
   "projects.all": "All",
 
   "experiences.title": "Experience",
+  "experiences.tab_professional": "Professional",
+  "experiences.tab_academic": "Academic",
+
+  "education.fatec-ads.description": "Associate Degree in Systems Analysis and Development at FATEC Ipiranga — Pastor Enéas Tognini, part of Centro Paula Souza. The program covers programming, databases, software engineering, project management, and computer fundamentals, with 2,400 hours plus supervised internship. Hybrid modality (80% on-site).",
+  "education.fatec-ads.highlights.0": "Full Stack Development: React.js, Angular, Spring Boot, Express.js, TypeScript, JavaScript, HTML, CSS",
+  "education.fatec-ads.highlights.1": "Programming and Algorithms: OOP, Data Structures, Algorithms, Java, Python, C",
+  "education.fatec-ads.highlights.2": "Databases and Persistence: SQL, MySQL, JPA (Java Persistence API)",
+  "education.fatec-ads.highlights.3": "Engineering and Methodologies: UML, Diagrams (Use Case, Class, Sequence), Systems Analysis, Software Engineering, Software Testing",
+  "education.fatec-ads.highlights.4": "Infrastructure and Tools: Docker, Git, Postman API, Version Control",
+  "education.fatec-ads.highlights.5": "Management and Processes: Scrum, Project Management, Use Case Analysis",
+  "education.fatec-ads.highlights.6": "Fundamentals: Discrete Mathematics, Logic Programming, Information Technology",
 
   "project_detail.back": "Back",
   "project_detail.about": "About",

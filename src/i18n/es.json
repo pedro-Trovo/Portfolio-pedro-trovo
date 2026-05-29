@@ -16,6 +16,17 @@
   "projects.all": "Todos",
 
   "experiences.title": "Experiencia",
+  "experiences.tab_professional": "Profesional",
+  "experiences.tab_academic": "Académica",
+
+  "education.fatec-ads.description": "Tecnólogo en Análisis y Desarrollo de Sistemas en FATEC Ipiranga — Pastor Enéas Tognini, vinculada al Centro Paula Souza. El curso abarca programación, bases de datos, ingeniería de software, gestión de proyectos y fundamentos de computación, con 2.400 horas más prácticas supervisadas. Modalidad híbrida (80% presencial).",
+  "education.fatec-ads.highlights.0": "Desarrollo Full Stack: React.js, Angular, Spring Boot, Express.js, TypeScript, JavaScript, HTML, CSS",
+  "education.fatec-ads.highlights.1": "Programación y Algoritmos: POO, Estructuras de Datos, Algoritmos, Java, Python, C",
+  "education.fatec-ads.highlights.2": "Bases de Datos y Persistencia: SQL, MySQL, JPA (Java Persistence API)",
+  "education.fatec-ads.highlights.3": "Ingeniería y Metodologías: UML, Diagramas (Caso de Uso, Clase, Secuencia), Análisis de Sistemas, Ingeniería de Software, Pruebas de Software",
+  "education.fatec-ads.highlights.4": "Infraestructura y Herramientas: Docker, Git, Postman API, Control de Versiones",
+  "education.fatec-ads.highlights.5": "Gestión y Procesos: Scrum, Gestión de Proyectos, Análisis de Casos de Uso",
+  "education.fatec-ads.highlights.6": "Fundamentos: Matemática Discreta, Programación Lógica, Tecnología de la Información",
 
   "project_detail.back": "Volver",
   "project_detail.about": "Acerca de",

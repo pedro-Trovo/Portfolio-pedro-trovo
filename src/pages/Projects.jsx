@@ -1,7 +1,9 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
 import { useLanguage } from '../i18n'
@@ -10,6 +12,19 @@ function Projects() {
   const { t, language } = useLanguage()
   const [searchParams, setSearchParams] = useSearchParams()
   const activeTag = searchParams.get('tag') || ''
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    if (!open) return
+    const handleClick = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [open])
 
   const allTags = useMemo(() => {
     const tags = new Set()
@@ -22,6 +37,7 @@ function Projects() {
     : projects
 
   const setTag = (tag) => {
+    setOpen(false)
     if (tag === activeTag) return
     if (tag) {
       setSearchParams({ tag })
@@ -47,26 +63,39 @@ function Projects() {
       </motion.h1>
 
       <motion.div
-        className="projects-filters"
+        className="filter-dropdown"
+        ref={ref}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.1 }}
       >
         <button
-          className={`filter-chip${!activeTag ? ' filter-chip--active' : ''}`}
-          onClick={() => setTag('')}
+          className={`filter-dropdown-trigger${open ? ' filter-dropdown-trigger--open' : ''}`}
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
         >
-          {t('projects.all')}
+          <span>{activeTag || t('projects.all')}</span>
+          <FontAwesomeIcon icon={faChevronDown} className="filter-dropdown-chevron" />
         </button>
-        {allTags.map((tag) => (
-          <button
-            key={tag}
-            className={`filter-chip${activeTag === tag ? ' filter-chip--active' : ''}`}
-            onClick={() => setTag(tag)}
-          >
-            {tag}
-          </button>
-        ))}
+        {open && (
+          <div className="filter-dropdown-menu">
+            <button
+              className={`filter-dropdown-option${!activeTag ? ' filter-dropdown-option--active' : ''}`}
+              onClick={() => setTag('')}
+            >
+              {t('projects.all')}
+            </button>
+            {allTags.map((tag) => (
+              <button
+                key={tag}
+                className={`filter-dropdown-option${activeTag === tag ? ' filter-dropdown-option--active' : ''}`}
+                onClick={() => setTag(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        )}
       </motion.div>
 
       <motion.div

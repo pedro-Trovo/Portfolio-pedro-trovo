@@ -516,14 +516,14 @@ main {
   font-weight: 800;
   margin: 0;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--color-text-primary) 40%, var(--color-accent) 100%);
+  background: linear-gradient(135deg, var(--color-text-primary) 20%, var(--color-accent) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .light .home-name {
-  background: linear-gradient(135deg, var(--color-text-primary) 40%, var(--color-accent) 100%);
+  background: linear-gradient(135deg, var(--color-text-primary) 20%, var(--color-accent) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

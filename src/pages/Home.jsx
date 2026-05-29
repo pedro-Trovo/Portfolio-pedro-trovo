@@ -50,6 +50,7 @@ function Home() {
       <section className="page home">
         <div className="home-orb home-orb--1" />
         <div className="home-orb home-orb--2" />
+        <div className="home-pattern" />
         <div className="home-hero">
           <motion.div
             className="home-photo-col"

@@ -1156,6 +1156,31 @@ main {
   border-color: var(--color-accent);
 }
 
+.page.experiences {
+  position: relative;
+  overflow: hidden;
+}
+
+.experiences-pattern {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  width: 480px;
+  height: 480px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image: url('/svg/experiences-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.light .experiences-pattern {
+  opacity: 0.03;
+}
+
 .experiences-list {
   display: flex;
   flex-direction: column;

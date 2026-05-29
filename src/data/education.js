@@ -9,5 +9,6 @@ export const education = [
       'Git', 'POO', 'UML', 'Scrum', 'JavaScript', 'Angular',
       'Python', 'C', 'MySQL', 'HTML', 'CSS', 'Express.js',
     ],
+    highlights: Array(7).fill(null),
   },
 ]

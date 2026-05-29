@@ -15,6 +15,9 @@
   "projects.title": "Projects",
   "projects.all": "All",
 
+  "search.placeholder": "Search projects, technologies, skills...",
+  "search.no_results": "No results found",
+
   "experiences.title": "Experience",
   "experiences.tab_professional": "Professional",
   "experiences.tab_academic": "Academic",

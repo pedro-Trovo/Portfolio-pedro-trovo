@@ -1,10 +1,15 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggle from './LanguageToggle'
+import SearchModal from './SearchModal'
 
 function Header() {
   const { t } = useLanguage()
+  const [showSearch, setShowSearch] = useState(false)
 
   return (
     <header className="header">
@@ -18,9 +23,13 @@ function Header() {
         <NavLink to="/contato">{t('nav.contact')}</NavLink>
       </nav>
       <div className="header-actions">
+        <button className="header-search-btn" onClick={() => setShowSearch(true)} aria-label="Search">
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
         <LanguageToggle />
         <ThemeToggle />
       </div>
+      {showSearch && <SearchModal onClose={() => setShowSearch(false)} />}
     </header>
   )
 }

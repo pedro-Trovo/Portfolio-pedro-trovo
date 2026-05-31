@@ -1,4 +1,8 @@
 <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="4" width="40" height="40" rx="10" fill="#0F172A"/>
-  <text x="24" y="31" font-family="'Plus Jakarta Sans','Inter',sans-serif" font-weight="700" font-size="24" fill="#62BBC1" text-anchor="middle">P</text>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="#0F172A"/>
+  <g stroke="#62BBC1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polyline points="14,20 20,26 14,32"/>
+    <line x1="24" y1="20" x2="30" y2="32"/>
+    <polyline points="34,20 28,26 34,32"/>
+  </g>
 </svg>

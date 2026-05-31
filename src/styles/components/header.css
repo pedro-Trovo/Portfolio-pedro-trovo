@@ -25,7 +25,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  line-height: 0;
   transition: opacity 0.2s;
 }
 
@@ -33,40 +33,9 @@
   opacity: 0.8;
 }
 
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--color-text-primary);
-}
-
-.logo-text-first {
-  font-weight: 300;
-}
-
-.logo-text-last {
-  font-weight: 700;
-}
-
-.logo-separator {
-  display: inline-block;
-  width: 1.5px;
-  height: 1.15rem;
-  background-color: var(--color-accent);
-  margin: 0 0.25rem;
-  vertical-align: middle;
-  border-radius: 1px;
-}
-
-.logo-underscore {
-  display: inline-block;
-  width: 1rem;
-  height: 2px;
-  background-color: var(--color-accent);
-  margin-left: 0.1rem;
-  vertical-align: middle;
-  border-radius: 1px;
+.logo-link img {
+  height: 32px;
+  width: auto;
 }
 
 .header-nav-desktop {
@@ -222,7 +191,7 @@
   border: 1px solid var(--color-text-muted);
   border-radius: var(--radius-sm);
   color: var(--color-text-primary);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1;
   padding: 0.45rem 0.55rem;
   cursor: pointer;
@@ -232,6 +201,12 @@
   justify-content: center;
   min-width: 36px;
   min-height: 36px;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme-toggle:hover {

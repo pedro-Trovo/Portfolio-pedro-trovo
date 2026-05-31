@@ -1,0 +1,20 @@
+dark mode — estrutura de camadas
+1 — Page bg #030810
+2 — Section / hero #060D1F
+3 — Cards / modais #0D1B2E
+4 — Inputs / badges #152038
+5 — Acento / logo #94A3B8
+6 — Texto primário #F5F0E8
+7 — Bordas / dividers #243450
+
+
+
+Light mode — estrutura de camadas
+1 — Page bg #F8F9FB
+2 — Section / hero #EEF2F8
+3 — Cards / modais #E2E8F2
+4 — Inputs / badges #D4DCEA
+5 — Acento navy #060D1F
+6 — Texto primário #060D1F
+7 — Bordas #B0BECC
+8 — Silver / ícones #94A3B8

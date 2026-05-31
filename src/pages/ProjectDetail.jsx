@@ -84,6 +84,14 @@ function ProjectDetail() {
       </Helmet>
 
       <section className="page project-detail">
+        <nav className="breadcrumbs" aria-label="Breadcrumb">
+          <Link to="/">{t('nav.home')}</Link>
+          <span className="breadcrumbs-sep">/</span>
+          <Link to="/projetos">{t('nav.projects')}</Link>
+          <span className="breadcrumbs-sep">/</span>
+          <span className="breadcrumbs-current" aria-current="page">{project.title}</span>
+        </nav>
+
         <Link to="/projetos" className="back-link">
           <FontAwesomeIcon icon={faArrowLeft} /> {t('project_detail.back')}
         </Link>

@@ -11,36 +11,57 @@ const fadeUp = {
   animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+function validate(values) {
+  const errors = {}
+  if (!values.name.trim()) errors.name = 'contact.error_name'
+  if (!values.email.trim()) errors.email = 'contact.error_email_required'
+  else if (!EMAIL_RE.test(values.email)) errors.email = 'contact.error_email_invalid'
+  if (!values.subject.trim()) errors.subject = 'contact.error_subject'
+  if (!values.message.trim()) errors.message = 'contact.error_message'
+  return errors
+}
+
 function Contato() {
   const { t } = useLanguage()
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [touched, setTouched] = useState({})
+  const [status, setStatus] = useState('idle')
+
+  const errors = validate(form)
+  const hasErrors = Object.keys(errors).length > 0
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
+  const handleBlur = (e) => {
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }))
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setTouched({ name: true, email: true, subject: true, message: true })
+    if (hasErrors) return
+
     setStatus('loading')
 
     try {
-      const templateParams = {
-        from_name: form.name,
-        from_email: form.email,
-        subject: form.subject,
-        message: form.message,
-      }
-
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
-
       setStatus('success')
       setForm({ name: '', email: '', subject: '', message: '' })
+      setTouched({})
     } catch {
       setStatus('error')
     }
@@ -61,12 +82,13 @@ function Contato() {
       <motion.form
         className="contact-form"
         onSubmit={handleSubmit}
+        noValidate
         variants={fadeUp}
         initial="initial"
         animate="animate"
       >
         <div className="form-row">
-          <div className="form-group">
+          <div className={`form-group${touched.name && errors.name ? ' has-error' : ''}`}>
             <label htmlFor="name">{t('contact.name')}</label>
             <input
               id="name"
@@ -75,10 +97,14 @@ function Contato() {
               required
               value={form.name}
               onChange={handleChange}
+              onBlur={handleBlur}
               disabled={status === 'loading'}
             />
+            {touched.name && errors.name && (
+              <span className="field-error">{t(errors.name)}</span>
+            )}
           </div>
-          <div className="form-group">
+          <div className={`form-group${touched.email && errors.email ? ' has-error' : ''}`}>
             <label htmlFor="email">{t('contact.email')}</label>
             <input
               id="email"
@@ -87,11 +113,15 @@ function Contato() {
               required
               value={form.email}
               onChange={handleChange}
+              onBlur={handleBlur}
               disabled={status === 'loading'}
             />
+            {touched.email && errors.email && (
+              <span className="field-error">{t(errors.email)}</span>
+            )}
           </div>
         </div>
-        <div className="form-group">
+        <div className={`form-group${touched.subject && errors.subject ? ' has-error' : ''}`}>
           <label htmlFor="subject">{t('contact.subject')}</label>
           <input
             id="subject"
@@ -100,10 +130,14 @@ function Contato() {
             required
             value={form.subject}
             onChange={handleChange}
+            onBlur={handleBlur}
             disabled={status === 'loading'}
           />
+          {touched.subject && errors.subject && (
+            <span className="field-error">{t(errors.subject)}</span>
+          )}
         </div>
-        <div className="form-group">
+        <div className={`form-group${touched.message && errors.message ? ' has-error' : ''}`}>
           <label htmlFor="message">{t('contact.message')}</label>
           <textarea
             id="message"
@@ -112,8 +146,12 @@ function Contato() {
             required
             value={form.message}
             onChange={handleChange}
+            onBlur={handleBlur}
             disabled={status === 'loading'}
           />
+          {touched.message && errors.message && (
+            <span className="field-error">{t(errors.message)}</span>
+          )}
         </div>
 
         <button
@@ -121,13 +159,17 @@ function Contato() {
           className="btn btn-primary btn-submit"
           disabled={status === 'loading'}
         >
-          <FontAwesomeIcon icon={faEnvelope} />
+          {status === 'loading' ? (
+            <span className="spinner" />
+          ) : (
+            <FontAwesomeIcon icon={faEnvelope} />
+          )}
           {status === 'loading' ? t('contact.sending') : t('contact.send')}
         </button>
 
         {status === 'success' && (
           <motion.p
-            className="form-feedback form-feedback--success"
+            className="form-feedback form-feedback--success form-feedback-enter"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -136,7 +178,7 @@ function Contato() {
         )}
         {status === 'error' && (
           <motion.p
-            className="form-feedback form-feedback--error"
+            className="form-feedback form-feedback--error form-feedback-enter"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
           >

@@ -23,30 +23,30 @@
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
   --font-mono:    'Fira Code', 'Consolas', monospace;
 
-  /* --- Backgrounds --- */
-  --color-bg-primary:  #30332E; /* Page bg            */
-  --color-bg-section:  #010400; /* Section / hero     */
-  --color-bg-card:     #010400; /* Cards / modais     */
-  --color-bg-subtle:   #3D403B; /* Inputs / badges    */
+  /* --- Backgrounds (Navy & Slate) --- */
+  --color-bg-primary:  #0B1120; /* Navy profundo      */
+  --color-bg-section:  #0F172A; /* Slate navy          */
+  --color-bg-card:     #1E293B; /* Navy claro          */
+  --color-bg-subtle:   #334155; /* Slate               */
 
   /* --- Borders & Dividers --- */
-  --color-border:      #4A4D48;
+  --color-border:      #334155;
 
   /* --- Text --- */
-  --color-text-primary: #FFFBFB; /* Snow            */
-  --color-text-muted:   #A09D98; /* Muted snow      */
+  --color-text-primary: #F1F5F9; /* Cool white        */
+  --color-text-muted:   #94A3B8; /* Slate gray        */
 
-  /* --- Accent (Tropical Teal) --- */
+  /* --- Accent (Teal + Indigo) --- */
   --color-accent:           #62BBC1;
   --color-accent-dim:       #62BBC126;
-  --color-accent-secondary: #EC058E; /* Electric Rose */
+  --color-accent-secondary: #818CF8; /* Indigo — substitui Electric Rose */
 
   /* --- Feedback Colors --- */
   --color-feedback-success: #22c55e;
   --color-feedback-error:   #ef4444;
 
   /* --- Shadows --- */
-  --color-shadow:           rgba(0, 0, 0, 0.3);
+  --color-shadow:           rgba(0, 0, 0, 0.4);
   --color-overlay:          rgba(0, 0, 0, 0.6);
 
   /* --- Border Radius Scale --- */
@@ -66,16 +66,16 @@
 
 :root.light {
 
-  --color-bg-primary:  #FFFBFB;
-  --color-bg-section:  #F5F1F1;
+  --color-bg-primary:  #F8FAFC;
+  --color-bg-section:  #F1F5F9;
   --color-bg-card:     #FFFFFF;
-  --color-bg-subtle:   #EBE7E7;
-  --color-border:      #D6D2D2;
-  --color-text-primary: #010400;
-  --color-text-muted:  #30332E;
-  --color-accent:      #62BBC1;
-  --color-accent-dim:  #62BBC126;
-  --color-accent-secondary: #EC058E;
+  --color-bg-subtle:   #E2E8F0;
+  --color-border:      #CBD5E1;
+  --color-text-primary: #0F172A;
+  --color-text-muted:  #64748B;
+  --color-accent:      #0EA5E9;
+  --color-accent-dim:  #0EA5E926;
+  --color-accent-secondary: #6366F1;
 
 }
 

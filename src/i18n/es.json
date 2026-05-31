@@ -51,6 +51,11 @@
   "contact.sending": "Enviando...",
   "contact.success": "¡Mensaje enviado con éxito! Te responderé pronto.",
   "contact.error": "Error al enviar el mensaje. Inténtalo de nuevo más tarde.",
+  "contact.error_name": "Ingresa tu nombre",
+  "contact.error_email_required": "Ingresa tu email",
+  "contact.error_email_invalid": "Email inválido",
+  "contact.error_subject": "Ingresa el asunto",
+  "contact.error_message": "Ingresa un mensaje",
 
   "cv.modal_title": "Curriculum Vitae",
 

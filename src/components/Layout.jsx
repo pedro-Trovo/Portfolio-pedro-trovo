@@ -1,12 +1,17 @@
-import { useLocation } from 'react-router-dom'
-import { Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Header from './Header'
 import Footer from './Footer'
 import ScrollProgress from './ScrollProgress'
+import ScrollToTop from './ScrollToTop'
 
 function Layout() {
-  const location = useLocation()
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname])
 
   return (
     <>
@@ -14,7 +19,7 @@ function Layout() {
       <Header />
       <main>
         <motion.div
-          key={location.pathname}
+          key={pathname}
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: 'easeOut' }}
@@ -23,6 +28,7 @@ function Layout() {
         </motion.div>
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }

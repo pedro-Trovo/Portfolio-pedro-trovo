@@ -6,7 +6,6 @@ import ProjectDetail from './pages/ProjectDetail'
 import Experiences from './pages/Experiences'
 import Contato from './pages/Contato'
 import NotFound from './pages/NotFound'
-import './App.css'
 
 function App() {
   return (

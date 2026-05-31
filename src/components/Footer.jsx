@@ -15,7 +15,8 @@ function Footer() {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <FontAwesomeIcon icon={faGithub} /> GitHub
+          <FontAwesomeIcon icon={faGithub} />
+          <span>GitHub</span>
         </a>
         <a
           href="https://www.linkedin.com/in/pedro-trovo-link/"
@@ -23,12 +24,15 @@ function Footer() {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+          <FontAwesomeIcon icon={faLinkedin} />
+          <span>LinkedIn</span>
         </a>
         <a href="mailto:pedroramostrovo@gmail.com" aria-label="Email">
-          <FontAwesomeIcon icon={faEnvelope} /> Email
+          <FontAwesomeIcon icon={faEnvelope} />
+          <span>Email</span>
         </a>
       </div>
+      <div className="footer-divider" />
       <p className="footer-copy">{t('footer.copyright')}</p>
     </footer>
   )

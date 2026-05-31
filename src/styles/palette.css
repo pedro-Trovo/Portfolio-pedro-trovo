@@ -1,5 +1,6 @@
 @font-face {
   font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype-variations') tech('variations');
   src: url('/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
   font-weight: 200 800;
   font-style: normal;
@@ -8,6 +9,7 @@
 
 @font-face {
   font-family: 'Fira Code';
+  src: url('/fonts/fira-code/FiraCode-VariableFont_wght.ttf') format('truetype-variations') tech('variations');
   src: url('/fonts/fira-code/FiraCode-VariableFont_wght.ttf') format('truetype');
   font-weight: 300 700;
   font-style: normal;

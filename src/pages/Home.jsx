@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 import CVModal from '../components/CVModal'
 
@@ -60,10 +62,10 @@ function Home() {
             </motion.div>
             <motion.div className="home-cv-buttons" variants={fadeUp}>
               <button onClick={() => setShowCV(true)} className="btn btn-primary">
-                {t('home.cv_download')}
+                <FontAwesomeIcon icon={faEye} /> {t('home.cv_download')}
               </button>
               <a href="/cv.pdf" download className="btn btn-secondary" title="Download PDF">
-                PDF
+                <FontAwesomeIcon icon={faDownload} />
               </a>
             </motion.div>
             <CVModal open={showCV} onClose={() => setShowCV(false)} />
@@ -84,9 +86,9 @@ function Home() {
               ))}
             </motion.div>
             <motion.div className="home-ctas" variants={fadeUp}>
-              <Link to="/contato" className="btn btn-primary">{t('home.contact_cta')}</Link>
-              <Link to="/projetos" className="btn btn-secondary">{t('home.projects_cta')}</Link>
-              <Link to="/experiencias" className="btn btn-secondary">{t('home.experiences_cta')}</Link>
+              <Link to="/contato" className="btn btn-primary">{t('home.contact_cta')} &rarr;</Link>
+              <Link to="/projetos" className="btn btn-secondary">{t('home.projects_cta')} &rarr;</Link>
+              <Link to="/experiencias" className="btn btn-secondary">{t('home.experiences_cta')} &rarr;</Link>
             </motion.div>
           </motion.div>
         </div>

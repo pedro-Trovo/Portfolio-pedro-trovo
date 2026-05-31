@@ -18,7 +18,9 @@ function EducationCard({ item }) {
     >
       <div className="experience-header">
         <div className="experience-header-left">
-          <img src="/images/logos/fatec-ipiranga.png" alt="FATEC Ipiranga" className="experience-logo" />
+          <div className="experience-icon">
+            <img src="/images/logos/fatec-ipiranga.png" alt="FATEC Ipiranga" className="experience-logo" />
+          </div>
           <div>
             <h2 className="experience-company">{item.institution}</h2>
             <p className="experience-role">{item.course}</p>

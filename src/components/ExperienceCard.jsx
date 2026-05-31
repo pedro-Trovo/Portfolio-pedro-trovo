@@ -18,7 +18,9 @@ function ExperienceCard({ experience }) {
     >
       <div className="experience-header">
         <div className="experience-header-left">
-          <img src="/images/logos/edi-labs.jpg" alt="Edi-Labs" className="experience-logo" />
+          <div className="experience-icon">
+            <img src="/images/logos/edi-labs.jpg" alt="Edi-Labs" className="experience-logo" />
+          </div>
           <div>
             <h2 className="experience-company">{experience.company}</h2>
             <p className="experience-role">{experience.role}</p>

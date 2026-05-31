@@ -7,8 +7,6 @@ import { projects } from '../data/projects'
 import { experiences } from '../data/experiences'
 import { education } from '../data/education'
 
-const homeSkills = ['Java', 'Spring Boot', 'SQL', 'Docker', 'REST APIs', 'Git']
-
 const searchIndex = [
   ...projects.map((p) => ({
     type: 'project',
@@ -22,21 +20,14 @@ const searchIndex = [
     title: e.company,
     subtitle: e.role,
     url: '/experiencias/profissional',
-    text: [e.company, e.role, e.description, ...e.tags].filter(Boolean).join(' '),
+    text: [e.company, e.role, e.description].filter(Boolean).join(' '),
   })),
   ...education.map((e) => ({
     type: 'education',
     title: e.institution,
     subtitle: e.course,
     url: '/experiencias/academica',
-    text: [e.institution, e.course, e.description, ...e.tags].filter(Boolean).join(' '),
-  })),
-  ...homeSkills.map((s) => ({
-    type: 'skill',
-    title: s,
-    subtitle: null,
-    url: '/',
-    text: s,
+    text: [e.institution, e.course, e.description].filter(Boolean).join(' '),
   })),
 ]
 

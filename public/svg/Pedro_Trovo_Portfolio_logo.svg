@@ -1,82 +1,36 @@
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Gradiente do Vidro (Subtle Navy -> Card Dark) -->
-    <linearGradient id="glassGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d0d15"/>
-      <stop offset="100%" stop-color="#080810"/>
-    </linearGradient>
+<svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" style=""><defs><mask id="imagine-text-gaps-v4jg96" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="340" height="340" fill="white"/><rect x="136.1953125" y="233" width="67.609375" height="22" fill="black" rx="2"/><rect x="135.9765625" y="248" width="68.046875" height="22" fill="black" rx="2"/></mask></defs>
+  <g transform="translate(0, -64)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
 
-    <!-- Brilho de Azul Celeste Neon -->
-    <linearGradient id="glareGradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#00c0ff" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="#00c0ff" stop-opacity="0.1"/>
-    </linearGradient>
+    <!-- BORDA BRANCA colada -->
+    <polygon points="170,148 244,191 244,277 170,320 96,277 96,191" fill="none" stroke="#F5F0E8" stroke-width="12" stroke-linejoin="round" paint-order="stroke fill" style="fill:none;stroke:rgb(245, 240, 232);color:rgb(255, 255, 255);stroke-width:12px;stroke-linecap:butt;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-    <!-- Filtro Neon forte para o P -->
-    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+    <!-- PREENCHIMENTO EXTERNO — marinho -->
+    <polygon points="170,148 244,191 244,277 170,320 96,277 96,191" fill="#060D1F" stroke="none" style="fill:rgb(6, 13, 31);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-  <!-- REMOVIDO: O fundo retangular preto (#060608) foi retirado -->
+    <!-- BORDA PRATA -->
+    <polygon points="170,148 244,191 244,277 170,320 96,277 96,191" fill="none" stroke="#94A3B8" stroke-width="3.5" stroke-linejoin="round" style="fill:none;stroke:rgb(148, 163, 184);color:rgb(255, 255, 255);stroke-width:3.5px;stroke-linecap:butt;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-  <!-- Grupo Centralizado -->
-  <g transform="translate(60, 60)">
-    
-    <!-- Losango Principal (Corpo do Vidro) -->
-    <!-- Este retângulo escuro agora atua como o fundo da letra -->
-    <rect x="-40" y="-40" width="80" height="80" rx="4" 
-          transform="rotate(45)" 
-          fill="url(#glassGradient)" 
-          stroke="#151520" 
-          stroke-width="1"/>
+    <!-- BORDA INTERNA PRATA -->
+    <polygon points="170,167 230,203 230,265 170,301 110,265 110,203" fill="none" stroke="#94A3B8" stroke-width="1.2" style="fill:none;stroke:rgb(148, 163, 184);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-    <!-- Reflexo de Vidro (Top Left) -->
-    <path d="M-28 -28 L0 -56 L28 -28 L0 0 Z" 
-          fill="url(#glareGradient)" 
-          transform="rotate(45)"/>
+    <!-- DISCO ESCURO interno -->
+    <polygon points="170,167 230,203 230,265 170,301 110,265 110,203" fill="#030810" stroke="none" style="fill:rgb(3, 8, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-    <!-- Losango Interno (Borda Brilhante) -->
-    <rect x="-30" y="-30" width="60" height="60" rx="2" 
-          transform="rotate(45)" 
-          fill="none" 
-          stroke="#00c0ff" 
-          stroke-width="1.5" 
-          stroke-opacity="0.9"
-          filter="url(#neonGlow)"/>
+    <!-- LINHAS DE CÓDIGO -->
+    <rect x="148" y="200" width="22" height="3" rx="1" fill="#94A3B8" opacity="0.9" style="fill:rgb(148, 163, 184);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="148" y="207" width="36" height="3" rx="1" fill="#4A5A6A" opacity="0.6" style="fill:rgb(74, 90, 106);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="148" y="214" width="16" height="3" rx="1" fill="#94A3B8" opacity="0.7" style="fill:rgb(148, 163, 184);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="148" y="221" width="28" height="3" rx="1" fill="#4A5A6A" opacity="0.5" style="fill:rgb(74, 90, 106);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="180" y="220" width="4" height="6" rx="1" fill="#94A3B8" style="fill:rgb(148, 163, 184);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-    <!-- A Letra P - Efeito Neon -->
-    
-    <!-- Camada de Fundo (O Brilho Atrás da letra) -->
-    <text x="0" y="12" 
-          text-anchor="middle" 
-          font-family="Inter, system-ui, sans-serif" 
-          font-weight="700" 
-          font-size="42" 
-          fill="#00c0ff" 
-          filter="url(#neonGlow)"
-          letter-spacing="-1">
-      P
-    </text>
+    <!-- linha separadora -->
+    <line x1="140" y1="234" x2="200" y2="234" stroke="#94A3B8" stroke-width="0.5" opacity="0.4" mask="url(#imagine-text-gaps-v4jg96)" style="fill:rgb(0, 0, 0);stroke:rgb(148, 163, 184);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-    <!-- Camada da Frente (Letra Branca Nítida) -->
-    <text x="0" y="12" 
-          text-anchor="middle" 
-          font-family="Inter, system-ui, sans-serif" 
-          font-weight="700" 
-          font-size="42" 
-          fill="#ffffff" 
-          letter-spacing="-1">
-      P
-    </text>
+    <!-- PEDRO — prata -->
+    <text x="170" y="249" text-anchor="middle" font-family="'Arial Black','Impact',sans-serif" font-size="13" font-weight="900" fill="#94A3B8" letter-spacing="2" style="fill:rgb(148, 163, 184);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Arial Black&quot;, Impact, sans-serif;font-size:13px;font-weight:900;text-anchor:middle;dominant-baseline:auto">PEDRO</text>
 
-    <!-- Ponto de Acento -->
-    <circle cx="22" cy="-22" r="2.5" fill="#00c0ff" filter="url(#neonGlow)"/>
-    
+    <!-- TROVO — off white -->
+    <text x="170" y="264" text-anchor="middle" font-family="'Arial Black','Impact',sans-serif" font-size="13" font-weight="900" fill="#F5F0E8" letter-spacing="2" style="fill:rgb(245, 240, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Arial Black&quot;, Impact, sans-serif;font-size:13px;font-weight:900;text-anchor:middle;dominant-baseline:auto">TROVO</text>
+
   </g>
 </svg>

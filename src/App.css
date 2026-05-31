@@ -373,32 +373,6 @@ main {
     var(--color-bg-primary);
 }
 
-.home-orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(80px);
-  opacity: 0.4;
-}
-
-.home-orb--1 {
-  width: 400px;
-  height: 400px;
-  background: var(--color-text-muted);
-  top: -100px;
-  left: -100px;
-  opacity: 0.12;
-}
-
-.home-orb--2 {
-  width: 300px;
-  height: 300px;
-  background: var(--color-text-muted);
-  bottom: -80px;
-  right: -80px;
-  opacity: 0.08;
-}
-
 .home-hero {
   display: grid;
   grid-template-columns: auto 1fr;

@@ -24,9 +24,9 @@
   --font-mono:    'Fira Code', 'Consolas', monospace;
 
   /* --- Backgrounds --- */
-  --color-bg-primary:  #010400; /* Page bg            */
-  --color-bg-section:  #1A1D19; /* Section / hero     */
-  --color-bg-card:     #30332E; /* Cards / modais     */
+  --color-bg-primary:  #30332E; /* Page bg            */
+  --color-bg-section:  #010400; /* Section / hero     */
+  --color-bg-card:     #010400; /* Cards / modais     */
   --color-bg-subtle:   #3D403B; /* Inputs / badges    */
 
   /* --- Borders & Dividers --- */

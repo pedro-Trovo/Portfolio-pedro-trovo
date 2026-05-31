@@ -659,16 +659,16 @@ main {
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-bg-primary);
-  border-color: var(--color-accent);
+  background-color: #060D1F;
+  color: #F5F0E8;
+  border-color: #060D1F;
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-  box-shadow: 0 0 20px var(--color-accent-dim);
+  background-color: #0D1B2E;
+  color: #F5F0E8;
+  border-color: #0D1B2E;
+  box-shadow: 0 0 20px rgba(6, 13, 31, 0.4);
 }
 
 .btn-secondary {

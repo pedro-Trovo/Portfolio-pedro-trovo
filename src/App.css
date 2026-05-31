@@ -313,19 +313,6 @@
    Grid Pattern Background
    ============================================ */
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(var(--color-border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.25;
-}
-
 /* ============================================
    Main
    ============================================ */

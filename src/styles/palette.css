@@ -24,35 +24,37 @@
   --font-mono:    'Fira Code', 'Consolas', monospace;
 
   /* --- Backgrounds --- */
-  --color-bg-primary:  #030810; /* Page bg        */
-  --color-bg-section:  #060D1F; /* Section / hero */
-  --color-bg-card:     #0D1B2E; /* Cards / modais */
-  --color-bg-subtle:   #152038; /* Inputs / badges */
+  --color-bg-primary:  #010400; /* Page bg            */
+  --color-bg-section:  #1A1D19; /* Section / hero     */
+  --color-bg-card:     #30332E; /* Cards / modais     */
+  --color-bg-subtle:   #3D403B; /* Inputs / badges    */
 
   /* --- Borders & Dividers --- */
-  --color-border:      #243450;
+  --color-border:      #4A4D48;
 
   /* --- Text --- */
-  --color-text-primary: #F5F0E8; /* Off-white   */
-  --color-text-muted:   #94A3B8; /* Silver/gray */
+  --color-text-primary: #FFFBFB; /* Snow            */
+  --color-text-muted:   #A09D98; /* Muted snow      */
 
-  /* --- Accent (Silver) --- */
-  --color-accent:       #94A3B8;
-  --color-accent-dim:   #94A3B826;
+  /* --- Accent (Tropical Teal) --- */
+  --color-accent:           #62BBC1;
+  --color-accent-dim:       #62BBC126;
+  --color-accent-secondary: #EC058E; /* Electric Rose */
 
 }
 
 :root.light {
 
-  --color-bg-primary:  #F8F9FB;
-  --color-bg-section:  #EEF2F8;
-  --color-bg-card:     #E2E8F2;
-  --color-bg-subtle:   #D4DCEA;
-  --color-border:      #B0BECC;
-  --color-text-primary: #060D1F;
-  --color-text-muted:  #94A3B8;
-  --color-accent:      #060D1F;
-  --color-accent-dim:  #060D1F1A;
+  --color-bg-primary:  #FFFBFB;
+  --color-bg-section:  #F5F1F1;
+  --color-bg-card:     #FFFFFF;
+  --color-bg-subtle:   #EBE7E7;
+  --color-border:      #D6D2D2;
+  --color-text-primary: #010400;
+  --color-text-muted:  #30332E;
+  --color-accent:      #62BBC1;
+  --color-accent-dim:  #62BBC126;
+  --color-accent-secondary: #EC058E;
 
 }
 
@@ -76,5 +78,8 @@
 .text-accent  { color: var(--color-accent); }
 
 /* Accent fills */
-.bg-accent     { background-color: var(--color-accent); }
-.bg-accent-dim { background-color: var(--color-accent-dim); }
+.bg-accent           { background-color: var(--color-accent); }
+.bg-accent-dim       { background-color: var(--color-accent-dim); }
+.bg-accent-secondary { background-color: var(--color-accent-secondary); }
+
+.text-accent-secondary { color: var(--color-accent-secondary); }

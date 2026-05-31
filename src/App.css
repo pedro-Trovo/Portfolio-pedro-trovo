@@ -349,14 +349,14 @@ main {
   overflow: hidden;
   background:
     radial-gradient(ellipse 80% 60% at 30% 50%, var(--color-accent-dim) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(0, 212, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(98, 187, 193, 0.06) 0%, transparent 70%),
     var(--color-bg-primary);
 }
 
 .light .home {
   background:
-    radial-gradient(ellipse 80% 60% at 30% 50%, rgba(0, 153, 204, 0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(0, 153, 204, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 30% 50%, rgba(98, 187, 193, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(98, 187, 193, 0.04) 0%, transparent 70%),
     var(--color-bg-primary);
 }
 
@@ -600,16 +600,16 @@ main {
 }
 
 .btn-primary {
-  background-color: #060D1F;
-  color: #F5F0E8;
-  border-color: #060D1F;
+  background-color: var(--color-accent);
+  color: #FFFBFB;
+  border-color: var(--color-accent);
 }
 
 .btn-primary:hover {
-  background-color: #0D1B2E;
-  color: #F5F0E8;
-  border-color: #0D1B2E;
-  box-shadow: 0 0 20px rgba(6, 13, 31, 0.4);
+  background-color: var(--color-accent-secondary);
+  color: #FFFBFB;
+  border-color: var(--color-accent-secondary);
+  box-shadow: 0 0 20px var(--color-accent-dim);
 }
 
 .btn-secondary {
@@ -996,13 +996,13 @@ main {
   cursor: default;
 }
 
-.lightbox-close {
+  .lightbox-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
   background: none;
   border: none;
-  color: #ffffff;
+  color: #FFFBFB;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -1019,7 +1019,7 @@ main {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #ffffff;
+  color: #FFFBFB;
   font-size: 2rem;
   cursor: pointer;
   padding: 1rem 0.75rem;
@@ -1043,7 +1043,7 @@ main {
   bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  color: #ffffff;
+  color: #FFFBFB;
   font-size: 0.85rem;
   font-weight: 500;
   opacity: 0.6;
@@ -1130,7 +1130,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: var(--color-accent-dim);
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 0.4rem;
@@ -1524,7 +1524,7 @@ main {
    ============================================ */
 
 .light .header {
-  background-color: #ffffff;
+  background-color: var(--color-bg-card);
   border-color: var(--color-border);
 }
 

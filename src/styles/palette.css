@@ -3,11 +3,28 @@
    Extraída do banner @bannerPedroTrovo.svg
    ============================================ */
 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/fira-code/FiraCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
 
   /* --- Fonts --- */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Fira Code', 'Consolas', monospace;
 
   /* --- Backgrounds --- */
   --color-bg-primary:    #060608; /* Deep Void   — fundo principal da página   */

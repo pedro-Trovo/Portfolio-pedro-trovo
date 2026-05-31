@@ -41,6 +41,27 @@
   --color-accent-dim:       #62BBC126;
   --color-accent-secondary: #EC058E; /* Electric Rose */
 
+  /* --- Feedback Colors --- */
+  --color-feedback-success: #22c55e;
+  --color-feedback-error:   #ef4444;
+
+  /* --- Shadows --- */
+  --color-shadow:           rgba(0, 0, 0, 0.3);
+  --color-overlay:          rgba(0, 0, 0, 0.6);
+
+  /* --- Border Radius Scale --- */
+  --radius-sm:  6px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-full: 9999px;
+
+  /* --- Z-Index Layers --- */
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal:   300;
+  --z-search:  400;
+
 }
 
 :root.light {

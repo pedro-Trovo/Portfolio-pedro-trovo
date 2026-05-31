@@ -35,7 +35,7 @@ function EducationCard({ item }) {
       <p className="experience-description">{e('description')}</p>
 
       <ul className="experience-highlights">
-        {item.highlights.map((_, index) => (
+        {Array.from({ length: item.highlightsCount }, (_, index) => (
           <li key={index}>{e(`highlights.${index}`)}</li>
         ))}
       </ul>

@@ -2,8 +2,10 @@ import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faDownload } from '@fortawesome/free-solid-svg-icons'
+import { useLanguage } from '../i18n'
 
 function CVModal({ open, onClose }) {
+  const { t } = useLanguage()
   useEffect(() => {
     if (!open) return
     const handleKey = (e) => {
@@ -32,7 +34,7 @@ function CVModal({ open, onClose }) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="cv-modal-header">
-              <span className="cv-modal-title">Curriculum Vitae</span>
+              <span className="cv-modal-title">{t('cv.modal_title')}</span>
               <div className="cv-modal-actions">
                 <a href="/cv.pdf" download className="btn btn-primary btn-sm">
                   <FontAwesomeIcon icon={faDownload} /> Download

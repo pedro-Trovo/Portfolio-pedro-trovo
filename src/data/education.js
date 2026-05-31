@@ -4,6 +4,6 @@ export const education = [
     institution: 'FATEC Ipiranga — Pastor Enéas Tognini',
     course: 'Análise e Desenvolvimento de Sistemas',
     period: '2023 — 2026',
-    highlights: Array(7).fill(null),
+    highlightsCount: 7,
   },
 ]

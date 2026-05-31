@@ -52,6 +52,8 @@
   "contact.success": "¡Mensaje enviado con éxito! Te responderé pronto.",
   "contact.error": "Error al enviar el mensaje. Inténtalo de nuevo más tarde.",
 
+  "cv.modal_title": "Curriculum Vitae",
+
   "footer.copyright": "Pedro Trovo © 2026",
 
   "404.title": "Página no encontrada",

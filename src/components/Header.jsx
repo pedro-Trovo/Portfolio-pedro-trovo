@@ -29,7 +29,7 @@ function Header() {
   return (
     <header className="header">
       <NavLink to="/" className="logo-link">
-        <img src="/svg/logo-header.svg" alt="Pedro Trovo" height={40} />
+        <img src="/svg/logo-header.svg" alt="Pedro Trovo" height={36} />
       </NavLink>
 
       <nav className="header-nav-desktop">

@@ -1,7 +1,7 @@
 import { useMemo, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faTimes, faCode, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 import { projects } from '../data/projects'
 import { experiences } from '../data/experiences'
@@ -104,8 +104,12 @@ function SearchModal({ onClose }) {
         </div>
 
         <div className="search-body">
-          {!query && (
+              {!query && (
             <p className="search-hint">{t('search.placeholder')}</p>
+          )}
+
+          {query && totalCount > 0 && (
+            <p className="search-count">{totalCount} resultado{totalCount !== 1 ? 's' : ''}</p>
           )}
 
           {query && totalCount === 0 && (
@@ -124,6 +128,11 @@ function SearchModal({ onClose }) {
                     className="search-result"
                     onClick={() => handleSelect(item.url)}
                   >
+                    <span className="search-result-icon">
+                      {type === 'project' && <FontAwesomeIcon icon={faCode} />}
+                      {type === 'experience' && <FontAwesomeIcon icon={faBriefcase} />}
+                      {type === 'education' && <FontAwesomeIcon icon={faGraduationCap} />}
+                    </span>
                     <div className="search-result-text">
                       <span className="search-result-title">{item.title}</span>
                       {item.subtitle && (

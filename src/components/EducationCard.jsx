@@ -34,12 +34,6 @@ function EducationCard({ item }) {
 
       <p className="experience-description">{e('description')}</p>
 
-      <div className="experience-tags">
-        {item.tags.map((tag) => (
-          <span key={tag} className="experience-tag">{tag}</span>
-        ))}
-      </div>
-
       <ul className="experience-highlights">
         {item.highlights.map((_, index) => (
           <li key={index}>{e(`highlights.${index}`)}</li>

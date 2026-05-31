@@ -470,28 +470,6 @@ main {
   color: var(--color-text-primary);
 }
 
-.home-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-.home-skill {
-  background-color: var(--color-accent-dim);
-  color: var(--color-accent);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid transparent;
-  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
-}
-
-.home-skill:hover {
-  border-color: var(--color-accent);
-}
-
 .home-ctas {
   display: flex;
   gap: 1rem;
@@ -1176,28 +1154,6 @@ main {
   margin: 0 0 1rem;
 }
 
-.experience-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.experience-tag {
-  background-color: var(--color-accent-dim);
-  color: var(--color-accent);
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  border: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.experience-tag:hover {
-  border-color: var(--color-accent);
-}
-
 .experience-highlights {
   list-style: none;
   padding: 0;
@@ -1573,10 +1529,6 @@ main {
   .home-bio {
     max-width: 100%;
     text-align: center;
-  }
-
-  .home-skills {
-    justify-content: center;
   }
 
   .home-ctas {

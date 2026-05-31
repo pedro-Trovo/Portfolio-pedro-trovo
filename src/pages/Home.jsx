@@ -7,8 +7,6 @@ import { faEye, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 import CVModal from '../components/CVModal'
 
-const skills = ['Java', 'Spring Boot', 'SQL', 'Docker', 'REST APIs', 'Git']
-
 const stagger = {
   animate: {
     transition: { staggerChildren: 0.08 },
@@ -78,11 +76,6 @@ function Home() {
             <motion.h1 className="home-name" variants={fadeUp}>{t('home.name')}</motion.h1>
             <motion.p className="home-title text-muted" variants={fadeUp}>{t('home.title')}</motion.p>
             <motion.p className="home-bio text-muted" variants={fadeUp}>{t('home.bio')}</motion.p>
-            <motion.div className="home-skills" variants={fadeUp}>
-              {skills.map((skill) => (
-                <span key={skill} className="home-skill">{skill}</span>
-              ))}
-            </motion.div>
             <motion.div className="home-ctas" variants={fadeUp}>
               <Link to="/contato" className="btn btn-primary">{t('home.contact_cta')} &rarr;</Link>
               <Link to="/projetos" className="btn btn-secondary">{t('home.projects_cta')} &rarr;</Link>

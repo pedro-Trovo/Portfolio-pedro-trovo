@@ -6,19 +6,6 @@ export const experiences = [
     period: '07/2025 — atualmente',
     description:
       'Minha experiência na Edi-Labs foi voltada para sustentação, monitoramento e integração de arquivos em ambiente corporativo, atuando diretamente com soluções de MFT (Managed File Transfer) através da plataforma Axway SecureTransport.',
-    tags: [
-      'Axway SecureTransport',
-      'MFT',
-      'SFTP',
-      'SSH',
-      'Linux',
-      'Shell Script',
-      'Monitoramento',
-      'Automação',
-      'Sustentação',
-      'Suporte Técnico',
-      'GMUD',
-    ],
     highlights: [
       'Criação e manutenção de fluxos de integração para troca segura de arquivos entre clientes e parceiros utilizando protocolos SFTP e SSH',
       'Criação de credenciais, configuração de acessos e liberações para parceiros externos se conectarem à plataforma MFT',

@@ -1,31 +1,41 @@
 <svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="400" fill="#010400"/>
 
-  <!-- Hexágono logo -->
-  <polygon points="140,80 214,123 214,209 140,252 66,209 66,123" fill="#30332E" stroke="#62BBC1" stroke-width="3" stroke-linejoin="round"/>
-  <polygon points="140,99 200,135 200,197 140,233 80,197 80,135" fill="#010400" stroke="#62BBC1" stroke-width="1"/>
+  <!-- Background hexagons watermark -->
+  <g opacity="0.03">
+    <polygon points="28,2 56,18 28,30 0,18" fill="#62BBC1" transform="translate(900, -20) scale(8)"/>
+    <polygon points="0,18 28,30 28,58 0,48" fill="#30332E" transform="translate(900, -20) scale(8)"/>
+    <polygon points="56,18 56,48 28,58 28,30" fill="#EC058E" transform="translate(900, -20) scale(8)"/>
+  </g>
 
-  <!-- Linhas de código -->
-  <rect x="118" y="132" width="22" height="3" rx="1" fill="#62BBC1" opacity="0.9"/>
-  <rect x="118" y="139" width="36" height="3" rx="1" fill="#30332E" opacity="0.6"/>
-  <rect x="118" y="146" width="16" height="3" rx="1" fill="#62BBC1" opacity="0.7"/>
+  <!-- Tricolor hexagon -->
+  <g transform="translate(140, 200)">
+    <g transform="translate(-28, -30) scale(3)">
+      <polygon points="28,2 56,18 28,30 0,18" fill="#62BBC1"/>
+      <polygon points="0,18 28,30 28,58 0,48" fill="#30332E"/>
+      <polygon points="56,18 56,48 28,58 28,30" fill="#EC058E"/>
+      <polygon points="28,2 56,18 56,48 28,58 0,48 0,18" fill="none" stroke="#FFFBFB" stroke-width="3.5" stroke-linejoin="round"/>
+      <polygon points="28,2 56,18 56,48 28,58 0,48 0,18" fill="none" stroke="#010400" stroke-width="1" stroke-linejoin="round"/>
+    </g>
+  </g>
 
-  <!-- PEDRO TROVO -->
-  <text x="140" y="182" text-anchor="middle" font-family="'Arial Black','Impact',sans-serif" font-size="14" font-weight="900" fill="#62BBC1" letter-spacing="2">PEDRO</text>
-  <text x="140" y="197" text-anchor="middle" font-family="'Arial Black','Impact',sans-serif" font-size="14" font-weight="900" fill="#FFFBFB" letter-spacing="2">TROVO</text>
+  <!-- Name -->
+  <text x="340" y="195" font-family="'Plus Jakarta Sans','Inter','Segoe UI',sans-serif" font-weight="700" font-size="46" fill="#FFFBFB" letter-spacing="-0.5">Pedro Trovo</text>
 
-  <!-- Nome grande -->
-  <text x="280" y="165" font-family="'Plus Jakarta Sans','Inter',sans-serif" font-weight="700" font-size="44" fill="#FFFBFB" letter-spacing="-0.5">Pedro Trovo</text>
+  <!-- Subtitle -->
+  <text x="340" y="233" font-family="'Inter','Segoe UI',sans-serif" font-weight="300" font-size="20" fill="#62BBC1" letter-spacing="1">BACKEND DEVELOPER</text>
 
-  <!-- Subtítulo -->
-  <text x="280" y="200" font-family="'Inter',sans-serif" font-weight="300" font-size="18" fill="#62BBC1" letter-spacing="0.5">BACKEND DEVELOPER</text>
-
-  <!-- Linha divisória -->
-  <line x1="280" y1="225" x2="520" y2="225" stroke="#62BBC1" stroke-width="1"/>
+  <!-- Divider line -->
+  <line x1="340" y1="258" x2="620" y2="258" stroke="#62BBC1" stroke-width="1.5" opacity="0.5"/>
 
   <!-- Portfolio -->
-  <text x="280" y="258" font-family="'Fira Code','Consolas',monospace" font-weight="500" font-size="16" fill="#62BBC1" letter-spacing="4">PORTFOLIO</text>
+  <text x="340" y="295" font-family="'Fira Code','Consolas',monospace" font-weight="500" font-size="18" fill="#EC058E" letter-spacing="4">PORTFOLIO</text>
 
-  <!-- Traço decorativo direita -->
-  <line x1="1100" y1="200" x2="600" y2="200" stroke="#30332E" stroke-width="1.5"/>
+  <!-- Decorative line -->
+  <line x1="1080" y1="200" x2="700" y2="200" stroke="#30332E" stroke-width="2" opacity="0.4"/>
+
+  <!-- Accent dots -->
+  <circle cx="1110" cy="200" r="4" fill="#62BBC1" opacity="0.5"/>
+  <circle cx="1130" cy="200" r="3" fill="#EC058E" opacity="0.4"/>
+  <circle cx="1145" cy="200" r="2" fill="#FFFBFB" opacity="0.3"/>
 </svg>

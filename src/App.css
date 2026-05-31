@@ -1135,6 +1135,13 @@ main {
   padding: 0.4rem;
 }
 
+.experience-logo {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .experience-company {
   font-size: 1.2rem;
   font-weight: 700;

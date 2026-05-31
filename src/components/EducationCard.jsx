@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 
 function EducationCard({ item }) {
@@ -18,7 +18,7 @@ function EducationCard({ item }) {
     >
       <div className="experience-header">
         <div className="experience-header-left">
-          <FontAwesomeIcon icon={faGraduationCap} className="experience-icon" />
+          <img src="/images/logos/fatec-ipiranga.png" alt="FATEC Ipiranga" className="experience-logo" />
           <div>
             <h2 className="experience-company">{item.institution}</h2>
             <p className="experience-role">{item.course}</p>

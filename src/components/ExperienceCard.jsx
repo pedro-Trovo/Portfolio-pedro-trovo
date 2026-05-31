@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBuilding, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 
 function ExperienceCard({ experience }) {
@@ -18,7 +18,7 @@ function ExperienceCard({ experience }) {
     >
       <div className="experience-header">
         <div className="experience-header-left">
-          <FontAwesomeIcon icon={faBuilding} className="experience-icon" />
+          <img src="/images/logos/edi-labs.jpg" alt="Edi-Labs" className="experience-logo" />
           <div>
             <h2 className="experience-company">{experience.company}</h2>
             <p className="experience-role">{experience.role}</p>

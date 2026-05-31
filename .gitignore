@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Design source files
+nova identidade visual/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

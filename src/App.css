@@ -1595,36 +1595,9 @@ main {
    Light overrides
    ============================================ */
 
-.light .header-nav-desktop a,
-.light .mobile-nav a {
-  color: #555566;
-}
-
-.light .header-nav-desktop a:hover,
-.light .header-nav-desktop a.active,
-.light .mobile-nav a:hover,
-.light .mobile-nav a.active {
-  color: #0099cc;
-}
-
-.light .hamburger {
-  border-color: #555566;
-  color: #333344;
-}
-
-.light .theme-toggle {
-  border-color: #555566;
-  color: #333344;
-}
-
-.light .lang-toggle {
-  border-color: #555566;
-  color: #555566;
-}
-
-.light .lang-dropdown {
+.light .header {
   background-color: #ffffff;
-  border-color: #d4d4d8;
+  border-color: var(--color-border);
 }
 
 /* ============================================

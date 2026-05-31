@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
 import CVModal from '../components/CVModal'
 
@@ -50,7 +48,6 @@ function Home() {
       <section className="page home">
         <div className="home-orb home-orb--1" />
         <div className="home-orb home-orb--2" />
-        <div className="home-pattern" />
         <div className="home-hero">
           <motion.div
             className="home-photo-col"
@@ -63,10 +60,10 @@ function Home() {
             </motion.div>
             <motion.div className="home-cv-buttons" variants={fadeUp}>
               <button onClick={() => setShowCV(true)} className="btn btn-primary">
-                <FontAwesomeIcon icon={faEye} /> {t('home.cv_download')}
+                {t('home.cv_download')}
               </button>
               <a href="/cv.pdf" download className="btn btn-secondary" title="Download PDF">
-                <FontAwesomeIcon icon={faDownload} />
+                PDF
               </a>
             </motion.div>
             <CVModal open={showCV} onClose={() => setShowCV(false)} />
@@ -87,9 +84,9 @@ function Home() {
               ))}
             </motion.div>
             <motion.div className="home-ctas" variants={fadeUp}>
-              <Link to="/contato" className="btn btn-primary">{t('home.contact_cta')} &rarr;</Link>
-              <Link to="/projetos" className="btn btn-secondary">{t('home.projects_cta')} &rarr;</Link>
-              <Link to="/experiencias" className="btn btn-secondary">{t('home.experiences_cta')} &rarr;</Link>
+              <Link to="/contato" className="btn btn-primary">{t('home.contact_cta')}</Link>
+              <Link to="/projetos" className="btn btn-secondary">{t('home.projects_cta')}</Link>
+              <Link to="/experiencias" className="btn btn-secondary">{t('home.experiences_cta')}</Link>
             </motion.div>
           </motion.div>
         </div>

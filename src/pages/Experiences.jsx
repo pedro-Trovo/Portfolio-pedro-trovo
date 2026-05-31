@@ -21,7 +21,6 @@ function Experiences() {
 
   return (
     <section className="page experiences">
-      <div className="experiences-pattern" />
       <Helmet>
         <html lang={language} />
         <title>{t('experiences.title')} | Pedro Trovo</title>

@@ -176,20 +176,6 @@
   border-color: var(--color-accent);
 }
 
-.light .header {
-  background-color: #ffffff;
-  border-color: #d4d4d8;
-}
-
-.light .header nav a {
-  color: #555566;
-}
-
-.light .header nav a:hover,
-.light .header nav a.active {
-  color: #0099cc;
-}
-
 /* ============================================
    Theme Toggle
    ============================================ */
@@ -674,7 +660,7 @@ main {
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: #003a4a;
+  color: var(--color-bg-primary);
   border-color: var(--color-accent);
 }
 

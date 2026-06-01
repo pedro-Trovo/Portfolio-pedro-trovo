@@ -3,17 +3,10 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowLeft,
-  faExternalLinkAlt,
-  faBookOpen,
-  faTimes,
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { projects } from '../data/projects'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 const techCategoryMap = {
   Frontend: 'tech.frontend',
@@ -37,6 +30,12 @@ function ProjectDetail() {
   const { t, language } = useLanguage()
   const project = projects.find((p) => p.slug === slug)
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const githubRef = useMouseGlow()
+  const siteRef = useMouseGlow()
+  const doiRef = useMouseGlow()
+  const lightboxCloseRef = useMouseGlow()
+  const lightboxPrevRef = useMouseGlow()
+  const lightboxNextRef = useMouseGlow()
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), [])
 
@@ -114,16 +113,16 @@ function ProjectDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.1 }}
           >
-            <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <a ref={githubRef} href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-glow">
               <FontAwesomeIcon icon={faGithub} /> GitHub
             </a>
             {project.links.site && (
-              <a href={project.links.site} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <a ref={siteRef} href={project.links.site} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-glow">
                 <FontAwesomeIcon icon={faExternalLinkAlt} /> Site
               </a>
             )}
             {project.links.doi && (
-              <a href={project.links.doi} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <a ref={doiRef} href={project.links.doi} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-glow">
                 <FontAwesomeIcon icon={faBookOpen} /> DOI
               </a>
             )}
@@ -192,7 +191,7 @@ function ProjectDetail() {
             {project.images.map((img, i) => (
               <motion.button
                 key={i}
-                className="project-detail-gallery-item"
+                className="project-detail-gallery-item btn-glow"
                 onClick={() => setLightboxIndex(i)}
                 variants={{
                   hidden: { opacity: 0, y: 12 },
@@ -207,10 +206,10 @@ function ProjectDetail() {
 
         {lightboxIndex !== null && (
           <div className="lightbox" onClick={closeLightbox}>
-            <button className="lightbox-close" onClick={closeLightbox}>
+            <button ref={lightboxCloseRef} className="lightbox-close btn-glow" onClick={closeLightbox}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-            <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); prevImage() }}>
+            <button ref={lightboxPrevRef} className="lightbox-nav lightbox-prev btn-glow" onClick={(e) => { e.stopPropagation(); prevImage() }}>
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
             <img
@@ -219,7 +218,7 @@ function ProjectDetail() {
               alt={`${project.title} ${lightboxIndex + 1}`}
               onClick={(e) => e.stopPropagation()}
             />
-            <button className="lightbox-nav lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage() }}>
+            <button ref={lightboxNextRef} className="lightbox-nav lightbox-next btn-glow" onClick={(e) => { e.stopPropagation(); nextImage() }}>
               <FontAwesomeIcon icon={faChevronRight} />
             </button>
             <span className="lightbox-counter">

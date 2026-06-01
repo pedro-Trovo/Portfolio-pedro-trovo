@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 function NotFound() {
   const { t } = useLanguage()
+  const backRef = useMouseGlow()
 
   return (
     <section className="page not-found-page">
@@ -30,7 +32,7 @@ function NotFound() {
         <span className="not-found-code">404</span>
         <h1>{t('404.title')}</h1>
         <p className="text-muted">{t('404.message')}</p>
-        <Link to="/" className="btn btn-primary">{t('404.back')}</Link>
+        <Link ref={backRef} to="/" className="btn btn-primary btn-glow">{t('404.back')}</Link>
       </motion.div>
     </section>
   )

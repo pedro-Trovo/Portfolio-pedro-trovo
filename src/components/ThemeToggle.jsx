@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 function ThemeToggle() {
+  const ref = useMouseGlow()
   const [isLight, setIsLight] = useState(() => {
     return localStorage.getItem('theme') === 'light'
   })
@@ -20,7 +22,8 @@ function ThemeToggle() {
 
   return (
     <button
-      className="theme-toggle"
+      ref={ref}
+      className="theme-toggle btn-glow"
       onClick={() => setIsLight((prev) => !prev)}
       aria-label={isLight ? 'Ativar tema escuro' : 'Ativar tema claro'}
     >

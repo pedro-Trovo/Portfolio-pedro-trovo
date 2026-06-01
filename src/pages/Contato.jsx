@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -25,6 +26,7 @@ function validate(values) {
 
 function Contato() {
   const { t } = useLanguage()
+  const submitRef = useMouseGlow()
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [touched, setTouched] = useState({})
   const [status, setStatus] = useState('idle')
@@ -155,8 +157,9 @@ function Contato() {
         </div>
 
         <button
+          ref={submitRef}
           type="submit"
-          className="btn btn-primary btn-submit"
+          className="btn btn-primary btn-submit btn-glow"
           disabled={status === 'loading'}
         >
           {status === 'loading' ? (

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../i18n'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 const languages = [
   { code: 'pt', label: 'Português' },
@@ -12,12 +13,13 @@ const languages = [
 function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
   const [open, setOpen] = useState(false)
-  const ref = useRef(null)
+  const wrapperRef = useRef(null)
+  const langBtnRef = useMouseGlow()
 
   useEffect(() => {
     if (!open) return
     const handleClick = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setOpen(false)
       }
     }
@@ -28,9 +30,10 @@ function LanguageToggle() {
   const current = languages.find((l) => l.code === language) || languages[0]
 
   return (
-    <div className="lang-wrapper" ref={ref}>
+    <div className="lang-wrapper" ref={wrapperRef}>
       <button
-        className="lang-btn"
+        ref={langBtnRef}
+        className="lang-btn btn-glow"
         onClick={() => setOpen(!open)}
         aria-label="Select language"
         aria-expanded={open}
@@ -43,7 +46,7 @@ function LanguageToggle() {
           {languages.map((l) => (
             <button
               key={l.code}
-              className={`lang-option${l.code === language ? ' lang-option--active' : ''}`}
+              className={`lang-option btn-glow${l.code === language ? ' lang-option--active' : ''}`}
               onClick={() => { setLanguage(l.code); setOpen(false) }}
             >
               {l.label}

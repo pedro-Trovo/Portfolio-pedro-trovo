@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 function ScrollToTop() {
+  const ref = useMouseGlow()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -17,7 +19,8 @@ function ScrollToTop() {
 
   return (
     <button
-      className={`scroll-top-btn${visible ? ' scroll-top-btn--visible' : ''}`}
+      ref={ref}
+      className={`scroll-top-btn btn-glow${visible ? ' scroll-top-btn--visible' : ''}`}
       onClick={scrollToTop}
       aria-label="Voltar ao topo"
     >

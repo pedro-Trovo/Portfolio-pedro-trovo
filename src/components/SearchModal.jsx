@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faTimes, faCode, faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 import { projects } from '../data/projects'
 import { experiences } from '../data/experiences'
 import { education } from '../data/education'
@@ -37,6 +38,8 @@ function SearchModal({ onClose }) {
   const { t } = useLanguage()
   const navigate = useNavigate()
   const inputRef = useRef(null)
+  const clearRef = useMouseGlow()
+  const closeRef = useMouseGlow()
   const [query, setQuery] = useState('')
 
   useEffect(() => {
@@ -94,11 +97,11 @@ function SearchModal({ onClose }) {
             onChange={(e) => setQuery(e.target.value)}
           />
           {query && (
-            <button className="search-clear" onClick={() => setQuery('')}>
+            <button ref={clearRef} className="search-clear btn-glow" onClick={() => setQuery('')}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
           )}
-          <button className="search-close-btn" onClick={onClose}>
+          <button ref={closeRef} className="search-close-btn btn-glow" onClick={onClose}>
             ESC
           </button>
         </div>
@@ -125,7 +128,7 @@ function SearchModal({ onClose }) {
                 {items.map((item, i) => (
                   <button
                     key={`${type}-${i}`}
-                    className="search-result"
+                    className="search-result btn-glow"
                     onClick={() => handleSelect(item.url)}
                   >
                     <span className="search-result-icon">

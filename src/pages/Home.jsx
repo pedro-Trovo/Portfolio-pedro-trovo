@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 import CVModal from '../components/CVModal'
 
 const stagger = {
@@ -21,6 +22,11 @@ const fadeUp = {
 function Home() {
   const { t, language } = useLanguage()
   const [showCV, setShowCV] = useState(false)
+  const cvRef = useMouseGlow()
+  const downloadRef = useMouseGlow()
+  const contactRef = useMouseGlow()
+  const projectsRef = useMouseGlow()
+  const experiencesRef = useMouseGlow()
 
   return (
     <>
@@ -57,10 +63,10 @@ function Home() {
               <img src="/profile/161767490.png" alt="Pedro Trovo" className="home-photo-img" />
             </motion.div>
             <motion.div className="home-cv-buttons" variants={fadeUp}>
-              <button onClick={() => setShowCV(true)} className="btn btn-primary">
+              <button ref={cvRef} onClick={() => setShowCV(true)} className="btn btn-primary btn-glow">
                 <FontAwesomeIcon icon={faEye} /> {t('home.cv_download')}
               </button>
-              <a href="/cv.pdf" download className="btn btn-secondary" title="Download PDF">
+              <a ref={downloadRef} href="/cv.pdf" download className="btn btn-secondary btn-glow" title="Download PDF">
                 <FontAwesomeIcon icon={faDownload} />
               </a>
             </motion.div>
@@ -77,9 +83,9 @@ function Home() {
             <motion.p className="home-title text-muted" variants={fadeUp}>{t('home.title')}</motion.p>
             <motion.p className="home-bio text-muted" variants={fadeUp}>{t('home.bio')}</motion.p>
             <motion.div className="home-ctas" variants={fadeUp}>
-              <Link to="/contato" className="btn btn-primary">{t('home.contact_cta')} &rarr;</Link>
-              <Link to="/projetos" className="btn btn-secondary">{t('home.projects_cta')} &rarr;</Link>
-              <Link to="/experiencias" className="btn btn-secondary">{t('home.experiences_cta')} &rarr;</Link>
+              <Link ref={contactRef} to="/contato" className="btn btn-primary btn-glow">{t('home.contact_cta')} &rarr;</Link>
+              <Link ref={projectsRef} to="/projetos" className="btn btn-secondary btn-glow">{t('home.projects_cta')} &rarr;</Link>
+              <Link ref={experiencesRef} to="/experiencias" className="btn btn-secondary btn-glow">{t('home.experiences_cta')} &rarr;</Link>
             </motion.div>
           </motion.div>
         </div>

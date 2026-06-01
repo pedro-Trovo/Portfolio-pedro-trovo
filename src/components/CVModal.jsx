@@ -3,9 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 function CVModal({ open, onClose }) {
   const { t } = useLanguage()
+  const downloadRef = useMouseGlow()
+  const closeRef = useMouseGlow()
   useEffect(() => {
     if (!open) return
     const handleKey = (e) => {
@@ -36,10 +39,10 @@ function CVModal({ open, onClose }) {
             <div className="cv-modal-header">
               <span className="cv-modal-title">{t('cv.modal_title')}</span>
               <div className="cv-modal-actions">
-                <a href="/cv.pdf" download className="btn btn-primary btn-sm">
+                <a ref={downloadRef} href="/cv.pdf" download className="btn btn-primary btn-sm btn-glow">
                   <FontAwesomeIcon icon={faDownload} /> Download
                 </a>
-                <button className="cv-modal-close" onClick={onClose}>
+                <button ref={closeRef} className="cv-modal-close btn-glow" onClick={onClose}>
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
               </div>

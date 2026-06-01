@@ -7,18 +7,20 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 function Projects() {
   const { t, language } = useLanguage()
   const [searchParams, setSearchParams] = useSearchParams()
   const activeTag = searchParams.get('tag') || ''
   const [open, setOpen] = useState(false)
-  const ref = useRef(null)
+  const containerRef = useRef(null)
+  const triggerRef = useMouseGlow()
 
   useEffect(() => {
     if (!open) return
     const handleClick = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) {
+      if (containerRef.current && !containerRef.current.contains(e.target)) {
         setOpen(false)
       }
     }
@@ -64,13 +66,14 @@ function Projects() {
 
       <motion.div
         className="filter-dropdown"
-        ref={ref}
+        ref={containerRef}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.1 }}
       >
         <button
-          className={`filter-dropdown-trigger${open ? ' filter-dropdown-trigger--open' : ''}`}
+          ref={triggerRef}
+          className={`filter-dropdown-trigger btn-glow${open ? ' filter-dropdown-trigger--open' : ''}`}
           onClick={() => setOpen(!open)}
           aria-expanded={open}
         >
@@ -80,7 +83,7 @@ function Projects() {
         {open && (
           <div className="filter-dropdown-menu">
             <button
-              className={`filter-dropdown-option${!activeTag ? ' filter-dropdown-option--active' : ''}`}
+              className={`filter-dropdown-option btn-glow${!activeTag ? ' filter-dropdown-option--active' : ''}`}
               onClick={() => setTag('')}
             >
               {t('projects.all')}
@@ -88,7 +91,7 @@ function Projects() {
             {allTags.map((tag) => (
               <button
                 key={tag}
-                className={`filter-dropdown-option${activeTag === tag ? ' filter-dropdown-option--active' : ''}`}
+                className={`filter-dropdown-option btn-glow${activeTag === tag ? ' filter-dropdown-option--active' : ''}`}
                 onClick={() => setTag(tag)}
               >
                 {tag}

@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggle from './LanguageToggle'
 import SearchModal from './SearchModal'
@@ -12,6 +13,8 @@ function Header() {
   const [showSearch, setShowSearch] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const searchBtnRef = useMouseGlow()
+  const hamburgerRef = useMouseGlow()
 
   useEffect(() => {
     setMenuOpen(false)
@@ -49,7 +52,7 @@ function Header() {
       </nav>
 
       <div className="header-actions">
-        <button className="header-search-btn" onClick={() => setShowSearch(true)} aria-label="Search">
+        <button ref={searchBtnRef} className="header-search-btn btn-glow" onClick={() => setShowSearch(true)} aria-label="Search">
           <FontAwesomeIcon icon={faSearch} />
         </button>
         <div className="header-actions-desktop">
@@ -57,7 +60,8 @@ function Header() {
           <ThemeToggle />
         </div>
         <button
-          className="hamburger"
+          ref={hamburgerRef}
+          className="hamburger btn-glow"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Menu"
           aria-expanded={menuOpen}

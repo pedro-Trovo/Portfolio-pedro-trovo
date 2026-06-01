@@ -5,9 +5,12 @@ import { motion } from 'framer-motion'
 import ExperienciaProfissional from './ExperienciaProfissional'
 import ExperienciaAcademica from './ExperienciaAcademica'
 import { useLanguage } from '../i18n'
+import { useMouseGlow } from '../hooks/useMouseGlow'
 
 function Experiences() {
   const { t, language } = useLanguage()
+  const profRef = useMouseGlow()
+  const acadRef = useMouseGlow()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -37,13 +40,15 @@ function Experiences() {
 
       <div className="experiences-tabs">
         <button
-          className={`experiences-tab${activeTab === 'profissional' ? ' experiences-tab--active' : ''}`}
+          ref={profRef}
+          className={`experiences-tab btn-glow${activeTab === 'profissional' ? ' experiences-tab--active' : ''}`}
           onClick={() => navigate('/experiencias/profissional')}
         >
           {t('experiences.tab_professional')}
         </button>
         <button
-          className={`experiences-tab${activeTab === 'academica' ? ' experiences-tab--active' : ''}`}
+          ref={acadRef}
+          className={`experiences-tab btn-glow${activeTab === 'academica' ? ' experiences-tab--active' : ''}`}
           onClick={() => navigate('/experiencias/academica')}
         >
           {t('experiences.tab_academic')}

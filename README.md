@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="public/svg/logo-header.svg" width="400" alt="Pedro Trovo">
+  <img src="https://raw.githubusercontent.com/pedro-Trovo/pedrotrovo/main/public/svg/logo-header.svg" width="400" alt="Pedro Trovo">
 </h1>
 
 <p align="center">

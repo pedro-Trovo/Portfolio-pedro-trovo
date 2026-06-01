@@ -26,16 +26,12 @@
   display: flex;
   align-items: center;
   line-height: 0;
+  color: var(--color-text-primary);
   transition: opacity 0.2s;
 }
 
 .logo-link:hover {
   opacity: 0.8;
-}
-
-.logo-link img {
-  height: 32px;
-  width: auto;
 }
 
 .header-nav-desktop {

@@ -28,8 +28,17 @@ function Header() {
 
   return (
     <header className="header">
-      <NavLink to="/" className="logo-link">
-        <img src="/svg/logo-header.svg" alt="Pedro Trovo" height={32} />
+      <NavLink to="/" className="logo-link" aria-label="Pedro Trovo — Home">
+        <svg width="150" height="28" viewBox="0 0 195 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#62BBC1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="4,13 11,20 4,27"/>
+            <line x1="15" y1="13" x2="22" y2="27"/>
+            <polyline points="26,13 33,20 26,27"/>
+          </g>
+          <line x1="40" y1="10" x2="40" y2="30" stroke="currentColor" strokeWidth="1" opacity="0.25"/>
+          <text x="52" y="25" fontFamily="'Plus Jakarta Sans','Inter','Segoe UI',sans-serif" fontWeight="300" fontSize="18" fill="currentColor" letterSpacing="-0.3">pedro</text>
+          <text x="112" y="25" fontFamily="'Plus Jakarta Sans','Inter','Segoe UI',sans-serif" fontWeight="700" fontSize="18" fill="currentColor" letterSpacing="-0.3">trovo</text>
+        </svg>
       </NavLink>
 
       <nav className="header-nav-desktop">

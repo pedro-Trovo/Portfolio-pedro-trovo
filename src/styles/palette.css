@@ -39,7 +39,7 @@
   /* --- Accent (Teal + Indigo) --- */
   --color-accent:           #62BBC1;
   --color-accent-dim:       #62BBC126;
-  --color-accent-secondary: #818CF8; /* Indigo — substitui Electric Rose */
+  --color-accent-secondary: #F87171; /* Coral / salmon */
 
   /* --- Feedback Colors --- */
   --color-feedback-success: #22c55e;
@@ -75,7 +75,7 @@
   --color-text-muted:  #64748B;
   --color-accent:      #0EA5E9;
   --color-accent-dim:  #0EA5E926;
-  --color-accent-secondary: #6366F1;
+  --color-accent-secondary: #EF4444;
 
 }
 

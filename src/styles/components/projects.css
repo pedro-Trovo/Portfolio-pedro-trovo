@@ -74,7 +74,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -156,6 +156,10 @@
   font-weight: 500;
   transition: border-color 0.2s;
   border: 1px solid transparent;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project-tag:hover {

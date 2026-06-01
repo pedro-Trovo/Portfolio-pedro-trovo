@@ -99,6 +99,10 @@
 }
 
 @media (max-width: 480px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
   .home-ctas {
     flex-direction: column;
     align-items: stretch;

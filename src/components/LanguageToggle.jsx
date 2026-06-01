@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../i18n'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const languages = [
   { code: 'pt', label: 'Português' },
@@ -35,8 +35,8 @@ function LanguageToggle() {
         aria-label="Select language"
         aria-expanded={open}
       >
-        <FontAwesomeIcon icon={faGlobe} />
-        <span className="lang-code">{current.code.toUpperCase()}</span>
+        <span className="lang-label">{current.code.toUpperCase()}</span>
+        <FontAwesomeIcon icon={faChevronDown} className="lang-arrow" />
       </button>
       {open && (
         <div className="lang-dropdown">

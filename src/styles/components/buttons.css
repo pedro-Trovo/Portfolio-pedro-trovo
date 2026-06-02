@@ -31,10 +31,6 @@
   border-color: var(--color-btn-primary-bg);
 }
 
-.btn-primary:hover {
-  filter: brightness(0.88);
-}
-
 .btn-secondary {
   background-color: transparent;
   color: var(--color-text-primary);

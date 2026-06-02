@@ -63,7 +63,7 @@ function Home() {
               <img src="/profile/161767490.png" alt="Pedro Trovo" className="home-photo-img" />
             </motion.div>
             <motion.div className="home-cv-buttons" variants={fadeUp}>
-              <button ref={cvRef} onClick={() => setShowCV(true)} className="btn btn-primary btn-glow">
+              <button ref={cvRef} onClick={() => setShowCV(true)} className="btn btn-primary btn-glow btn-glow-white">
                 <FontAwesomeIcon icon={faEye} /> {t('home.cv_download')}
               </button>
               <a ref={downloadRef} href="/cv.pdf" download className="btn btn-secondary btn-glow" title="Download PDF">
@@ -83,7 +83,7 @@ function Home() {
             <motion.p className="home-title text-muted" variants={fadeUp}>{t('home.title')}</motion.p>
             <motion.p className="home-bio text-muted" variants={fadeUp}>{t('home.bio')}</motion.p>
             <motion.div className="home-ctas" variants={fadeUp}>
-              <Link ref={contactRef} to="/contato" className="btn btn-primary btn-glow">{t('home.contact_cta')} &rarr;</Link>
+              <Link ref={contactRef} to="/contato" className="btn btn-primary btn-glow btn-glow-white">{t('home.contact_cta')} &rarr;</Link>
               <Link ref={projectsRef} to="/projetos" className="btn btn-secondary btn-glow">{t('home.projects_cta')} &rarr;</Link>
               <Link ref={experiencesRef} to="/experiencias" className="btn btn-secondary btn-glow">{t('home.experiences_cta')} &rarr;</Link>
             </motion.div>

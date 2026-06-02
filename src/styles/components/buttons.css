@@ -33,7 +33,6 @@
 
 .btn-primary:hover {
   filter: brightness(0.88);
-  box-shadow: 0 0 24px var(--color-accent-dim);
 }
 
 .btn-secondary {
@@ -84,7 +83,7 @@
   border-radius: inherit;
   background: radial-gradient(
     circle at var(--glow-x, 50%) var(--glow-y, 50%),
-    var(--color-accent) 0%,
+    var(--btn-glow-color, var(--color-accent)) 0%,
     transparent 65%
   );
   opacity: 0;
@@ -95,4 +94,8 @@
 
 .btn-glow:hover::before {
   opacity: 0.2;
+}
+
+.btn-glow-white {
+  --btn-glow-color: #FFFBFB;
 }

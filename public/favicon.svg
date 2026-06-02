@@ -1,4 +1,16 @@
-<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <rect width="48" height="48" rx="10" fill="#62BBC1"/>
-  <text x="24" y="31" text-anchor="middle" font-family="'Fira Code','JetBrains Mono',monospace" font-weight="800" font-size="20" fill="#FFFBFB">&lt;P/&gt;</text>
+<svg width="48" height="48" viewBox="0 0 790 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(632.616,0,0,633.388,499.32,-86.401)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#62BBC1"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </radialGradient>
+    <linearGradient id="b" x1="86.342" x2="86.342" y1="599.269" y2="358.469" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D9488"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1.5890899,0,0,1.5890899,-0.30664861,-1.5445954)">
+    <path fill="url(#a)" d="M 0.193,466.389 V 630.263 H 115.08 V 473.48 a 57.55,57.55 0 0 1 16.824,-40.668 57.41,57.41 0 0 1 40.619,-16.846 h 117.798 c 54.953,-0.016 107.65,-21.884 146.504,-60.793 38.853,-38.91 60.681,-91.676 60.686,-146.696 0,-55.028 -21.832,-107.803 -60.692,-146.717 C 397.958,22.846 345.251,0.98 290.29,0.972 H 0.193 V 205.814 H 115.08 v -96.575 h 167.467 a 98,98 0 0 1 69.329,28.746 98.24,98.24 0 0 1 28.733,69.405 98.242,98.242 0 0 1 -28.721,69.425 98.004,98.004 0 0 1 -69.341,28.757 H 160.798 a 160.372,160.372 0 0 0 -61.477,12.221 160.515,160.515 0 0 0 -52.116,34.859 160.737,160.737 0 0 0 -34.812,52.184 160.892,160.892 0 0 0 -12.2,61.553 z"/>
+    <path fill="url(#b)" d="M 172.491,415.966 A 172.21,172.21 0 0 0 50.663,466.498 C 18.35,498.848 0.197,542.724 0.193,588.475 v 41.788 H 115.08 V 473.48 a 57.548,57.548 0 0 1 16.813,-40.657 57.411,57.411 0 0 1 40.598,-16.857 z"/>
+  </g>
 </svg>

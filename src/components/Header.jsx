@@ -32,7 +32,7 @@ function Header() {
   return (
     <header className="header">
       <NavLink to="/" className="logo-link" aria-label="Pedro Trovo — Home">
-        <svg width="24" height="28" viewBox="0 0 790 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="18" height="22" viewBox="0 0 790 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="logo-grad" cx="0" cy="0" r="1" gradientTransform="matrix(632.616,0,0,633.388,499.32,-86.401)" gradientUnits="userSpaceOnUse">
               <stop stop-color="#62BBC1"/>
@@ -48,7 +48,8 @@ function Header() {
             <path fill="url(#logo-grad2)" d="M 172.491,415.966 A 172.21,172.21 0 0 0 50.663,466.498 C 18.35,498.848 0.197,542.724 0.193,588.475 v 41.788 H 115.08 V 473.48 a 57.548,57.548 0 0 1 16.813,-40.657 57.411,57.411 0 0 1 40.598,-16.857 z"/>
           </g>
         </svg>
-        <svg width="125" height="28" viewBox="0 0 125 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <span className="logo-sep" aria-hidden="true">|</span>
+        <svg width="125" height="22" viewBox="0 0 125 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <text x="0" y="25" fontFamily="'Plus Jakarta Sans','Inter','Segoe UI',sans-serif" fontWeight="300" fontSize="18" fill="currentColor" letterSpacing="-0.3">pedro</text>
           <text x="60" y="25" fontFamily="'Plus Jakarta Sans','Inter','Segoe UI',sans-serif" fontWeight="700" fontSize="18" fill="currentColor" letterSpacing="-0.3">trovo</text>
         </svg>

@@ -76,7 +76,7 @@ function Contato() {
         <meta name="description" content={t('contact.subtitle')} />
       </Helmet>
 
-      <motion.h1 variants={fadeUp} initial="initial" animate="animate">{t('contact.title')}</motion.h1>
+      <motion.h1 className="heading-gradient" variants={fadeUp} initial="initial" animate="animate">{t('contact.title')}</motion.h1>
       <motion.p className="contact-subtitle text-muted" variants={fadeUp} initial="initial" animate="animate">
         {t('contact.subtitle')}
       </motion.p>

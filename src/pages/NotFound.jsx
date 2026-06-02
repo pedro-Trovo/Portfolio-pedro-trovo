@@ -30,7 +30,7 @@ function NotFound() {
           </g>
         </svg>
         <span className="not-found-code">404</span>
-        <h1>{t('404.title')}</h1>
+        <h1 className="heading-gradient">{t('404.title')}</h1>
         <p className="text-muted">{t('404.message')}</p>
         <Link ref={backRef} to="/" className="btn btn-primary btn-glow">{t('404.back')}</Link>
       </motion.div>

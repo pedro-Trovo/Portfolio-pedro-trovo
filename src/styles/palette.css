@@ -101,3 +101,11 @@
 /* Accent fills */
 .bg-accent           { background-color: var(--color-accent); }
 .bg-accent-dim       { background-color: var(--color-accent-dim); }
+
+/* Heading gradient */
+.heading-gradient {
+  background: linear-gradient(90deg, var(--color-text-primary) 10%, var(--color-accent) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

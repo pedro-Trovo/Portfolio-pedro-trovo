@@ -110,7 +110,7 @@ function ProjectDetail() {
             transition={{ duration: 0.35 }}
           >
             <p className="project-detail-subtitle text-muted">{project.subtitle}</p>
-            <h1 className="project-detail-title">{project.title}</h1>
+            <h1 className="project-detail-title heading-gradient">{project.title}</h1>
             {project.context && (
               <p className="project-detail-context text-muted">{p('context')}</p>
             )}

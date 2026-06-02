@@ -36,10 +36,10 @@
   --color-text-primary: #F1F5F9; /* Cool white        */
   --color-text-muted:   #94A3B8; /* Slate gray        */
 
-  /* --- Accent (Teal + Indigo) --- */
+  /* --- Accent (Teal) --- */
   --color-accent:           #62BBC1;
   --color-accent-dim:       #62BBC126;
-  --color-accent-secondary: #F87171; /* Coral / salmon */
+  --color-btn-primary-bg:   var(--color-accent);
 
   /* --- Feedback Colors --- */
   --color-feedback-success: #22c55e;
@@ -73,9 +73,9 @@
   --color-border:      #CBD5E1;
   --color-text-primary: #0F172A;
   --color-text-muted:  #64748B;
-  --color-accent:      #0EA5E9;
-  --color-accent-dim:  #0EA5E926;
-  --color-accent-secondary: #EF4444;
+  --color-accent:          #62BBC1;
+  --color-accent-dim:      #62BBC126;
+  --color-btn-primary-bg:  #0B1120;
 
 }
 
@@ -101,6 +101,3 @@
 /* Accent fills */
 .bg-accent           { background-color: var(--color-accent); }
 .bg-accent-dim       { background-color: var(--color-accent-dim); }
-.bg-accent-secondary { background-color: var(--color-accent-secondary); }
-
-.text-accent-secondary { color: var(--color-accent-secondary); }

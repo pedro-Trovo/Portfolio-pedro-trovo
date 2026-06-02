@@ -45,7 +45,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-secondary);
+  color: var(--color-accent);
 }
 
 :focus-visible {

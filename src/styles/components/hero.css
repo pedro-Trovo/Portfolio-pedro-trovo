@@ -86,13 +86,6 @@
   gap: 1rem;
 }
 
-.home-greeting {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 0 0.25rem;
-  line-height: 1.2;
-}
-
 .home-name {
   font-size: 3rem;
   font-weight: 800;

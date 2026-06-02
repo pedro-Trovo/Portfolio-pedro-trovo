@@ -79,7 +79,6 @@ function Home() {
             initial="initial"
             animate="animate"
           >
-            <motion.p className="home-greeting heading-gradient" variants={fadeUp}>{t('home.greeting')}</motion.p>
             <motion.h1 className="home-name" variants={fadeUp}>{t('home.name')}</motion.h1>
             <motion.p className="home-title text-muted" variants={fadeUp}>{t('home.title')}</motion.p>
             <motion.p className="home-bio text-muted" variants={fadeUp}>{t('home.bio')}</motion.p>

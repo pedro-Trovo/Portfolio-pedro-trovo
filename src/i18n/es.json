@@ -4,7 +4,8 @@
   "nav.experiences": "Experiencia",
   "nav.contact": "Contacto",
 
-  "home.name": "Pedro Trovo",
+  "home.greeting": "¡Hola!",
+  "home.name": "Soy Pedro Trovo",
   "home.title": "Backend Developer",
   "home.bio": "Desarrollador backend con experiencia en la creación de sistemas robustos y escalables. Apasionado por la tecnología, el código limpio y las soluciones bien diseñadas.",
   "home.cv_download": "Curriculum Vitae",
